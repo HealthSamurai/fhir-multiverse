@@ -1,0 +1,21 @@
+version: '3.1'
+services:
+  dojo-db:
+    image: aidbox/db:11.4.0
+    container_name: multiverse-db
+    ports:
+      - "${PGPORT}:5432"
+    volumes:
+      - "./pgdata:/data"
+    environment:
+      POSTGRES_USER:     "${PGUSER}" 
+      POSTGRES_PASSWORD: "${PGPASSWORD}" 
+      POSTGRES_DB:       "${PGDATABASE}"
+  # dojo:
+
+  #   image: "${IMG}"
+  #   ports:
+  #     - 8080:8887
+  #   depends_on:
+  #     - dojo-db
+
