@@ -36,25 +36,61 @@
    keys
    set))
 
+(defn get-resource-fields [fhir r]
+  (->>
+   fhir
+   :resources
+   :Attribute
+   (filter #(str/starts-with? (str (first %)) (str r)))
+   (map first)
+   set))
+
+(defn rfn [acc r]
+  (let [r3-fields (get-resource-fields r3 r)
+        r4-fields (get-resource-fields r4 r)
+        added     (clojure.set/difference r4-fields r3-fields)
+        deleted   (clojure.set/difference r3-fields r4-fields)
+        shared    (clojure.set/intersection r3-fields r4-fields)]
+    (assoc
+     acc
+     r
+     {:added   {:count  (count added)
+                :fields added}
+      :deleted {:count  (count deleted)
+                :fields deleted}
+      :shared  {:count  (count shared)
+                :fields shared}})))
+
+(defn generate-fields-diff [shared-resources]
+  )
+
 (defn get-resources-diff [get-resources key]
   (let [r3-resources      (get-resources r3)
         r4-resources      (get-resources r4)
         added-resources   (clojure.set/difference r4-resources r3-resources)
         deleted-resources (clojure.set/difference r3-resources r4-resources)
-        shared-resources  (clojure.set/intersection r3-resources r4-resources)]
-    {:added   {:count (count added-resources)
-               key added-resources}
-     :deleted {:count (count deleted-resources)
-               key deleted-resources}
-     :shared  {:count (count shared-resources)
-               key shared-resources}}
+        shared-resources  (clojure.set/intersection r3-resources r4-resources)
+        fields            (when-not (= :primitive key)
+                            {:fields (reduce rfn {} shared-resources)})
+        ]
+    (merge
+     {:added   {:count (count added-resources)
+                key    added-resources}
+      :deleted {:count (count deleted-resources)
+                key    deleted-resources}
+      :shared  {:count (count shared-resources)
+                key    shared-resources}}
+     fields)
     ))
 
 
 (def diff
-  {:resources (get-resources-diff get-resources :resources)
-   :types (get-resources-diff get-types :types)
-   :primitives (get-resources-diff get-primitives :primitives)})
+  (let [resources  (get-resources-diff get-resources :resources)
+        types      (get-resources-diff get-types :types)
+        primitives (get-resources-diff get-primitives :primitives)]
+    {:resources  resources
+     :types      types
+     :primitives primitives}))
 
 (spit
  "results/diff.edn"
@@ -65,10 +101,14 @@
   [:Patient :HumanName :decimal])
 
 (->>
-    (get-in r4 [:resources :Entity])
-    (filter #(get-in % [1 :type]))
-    keys
-    )
+ r4
+ :resources
+ :Attribute
+ (filter #(str/starts-with? (str (first %)) (str :decimal)))
+;; :MetadataResource.title
+;; keys
+ clojure.pprint/pprint
+ )
 
 (clojure.pprint/pprint diff)
 
