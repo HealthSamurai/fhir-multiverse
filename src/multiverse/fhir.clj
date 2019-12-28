@@ -11,8 +11,6 @@
 (defn write-to-file [filename data]
   (spit (str filename) data))
 
-
-
 (def r4 (load-version "4.0.0"))
 (def r3 (load-version "3.0.1"))
 
@@ -90,7 +88,6 @@
      fields)
     ))
 
-
 (def diff
   (let [resources  (get-resources-diff get-resources :resources)
         types      (get-resources-diff get-types :types)
@@ -99,37 +96,80 @@
      :types      types
      :primitives primitives}))
 
+(defn get-attribute [key]
+  (->
+   r4
+   :resources
+   :Attribute
+   key))
+(do
+  (defn keyword->path [k]
+    (let [[resource & fields] (str/split (name k) #"\.")]
+
+      (->
+       (reduce (fn [acc v]
+                 (let [new-prefix (str (:prefix acc) "." v)
+                       attr       (get-attribute (keyword new-prefix))]
+                   (->
+                    (update-in acc [:path] concat [(keyword v)] (when (:isCollection attr) [[:*]]))
+                    (assoc-in [:prefix] new-prefix))))
+               {:path   []
+                :prefix resource}
+               fields)
+       :path)))
+
+  (keyword->path :Claim.careTeam.id))
+
+(defn identity-rule [path]
+  {:r3 path
+   :r4 path})
+
+(defn identity-by-key [key]
+  (->
+   key
+   keyword->path
+   identity-rule))
+
+(do
+  (defn rules-by-resource [resource]
+    (let [shared-fields (get-in diff [:resources :fields resource :shared :fields])]
+      (->>
+       (map #(concat [%] [(get-attribute %)]) shared-fields)
+       (filter #(-> % second :type))
+       (map first)
+       (map identity-by-key)
+       ))
+
+    ))
+
+
+
 (spit
  "results/diff.edn"
  (with-out-str
    (clojure.pprint/pprint diff)))
 
+(spit
+ "results/converter.edn"
+ (with-out-str
+   (clojure.pprint/pprint (rules-by-resource :Claim))))
+
 (def different-objects
   [:Patient :HumanName :decimal])
-
-(->>
- r4
- :resources
- :Attribute
- (filter #(str/starts-with? (str (first %)) (str :decimal)))
-;; :MetadataResource.title
-;; keys
- clojure.pprint/pprint
- )
-
-(def
-  converter
-  #:ih {:direction [:r3 :r4]
-        :rules []})
 
 (->
  diff
  :resources
  :fields
- :Claim
+ :QuestionnaireResponse
+ :shared
+ :fields
  clojure.pprint/pprint)
 ;;Resource.field.field.field
 
+
+
+(get-attribute :Claim.payee)
 (comment
 
 
