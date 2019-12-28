@@ -1,0 +1,61 @@
+{:resources
+ {:added
+  #{:ServiceRequest :MoneyQuantity :BiologicallyDerivedProduct
+    :EffectEvidenceSynthesis :MedicinalProductContraindication
+    :Evidence :SubstancePolymer :SubstanceNucleicAcid
+    :SubstanceReferenceInformation :SubstanceSourceMaterial
+    :EvidenceVariable :OrganizationAffiliation :DeviceDefinition
+    :Invoice :CoverageEligibilityResponse :BodyStructure
+    :MedicinalProductAuthorization :ImmunizationEvaluation :Expression
+    :MedicinalProductInteraction :MolecularSequence :ProductShelfLife
+    :MedicinalProduct :ChargeItemDefinition :MedicinalProductPackaged
+    :MedicinalProductPharmaceutical :MedicationKnowledge
+    :MedicinalProductIndication :EventDefinition
+    :MedicinalProductUndesirableEffect :canonical
+    :SubstanceSpecification :SpecimenDefinition :VerificationResult
+    :url :MarketingStatus :RiskEvidenceSynthesis :ProdCharacteristic
+    :InsurancePlan :ExampleScenario :SubstanceProtein
+    :ResearchElementDefinition :SubstanceAmount :CatalogEntry
+    :ObservationDefinition :ResearchDefinition
+    :MedicinalProductManufactured :CoverageEligibilityRequest
+    :MedicinalProductIngredient :Population :TerminologyCapabilities},
+  :deleted
+  #{:ProcedureRequest :DeviceComponent :ReferralRequest
+    :ProcessResponse :Sequence :DataElement :ExpansionProfile
+    :EligibilityRequest :EligibilityResponse :ServiceDefinition
+    :BodySite :ProcessRequest :ImagingManifest},
+  :shared
+  #{:DeviceRequest :DeviceMetric :unsignedInt :Signature :markdown
+    :CarePlan :Observation :EnrollmentRequest :Group :MessageDefinition
+    :Appointment :date :QuestionnaireResponse :EpisodeOfCare
+    :BackboneElement :SupplyDelivery :AdverseEvent :Dosage
+    :ContactDetail :Endpoint :RelatedArtifact :instant
+    :CompartmentDefinition :DetectedIssue :MedicationAdministration
+    :ImplementationGuide :Goal :Communication :Schedule
+    :DocumentReference :Coverage :AuditEvent :MessageHeader
+    :SimpleQuantity :Contract :CodeSystem :Element :UsageContext
+    :PlanDefinition :ClaimResponse :ChargeItem :time :DataRequirement
+    :Parameters :base64Binary :ClinicalImpression :FamilyMemberHistory
+    :Meta :Binary :Distance :Composition :SampledData :PractitionerRole
+    :HealthcareService :Patient :MedicationDispense :TriggerDefinition
+    :Identifier :string :DeviceUseStatement :Address :StructureMap
+    :Library :Basic :Slot :ActivityDefinition :Bundle :Specimen
+    :DiagnosticReport :Subscription :RequestGroup :Provenance :dateTime
+    :Practitioner :Flag :ExplanationOfBenefit :Linkage
+    :OperationOutcome :Immunization :ElementDefinition :Range :integer
+    :ResearchSubject :Ratio :oid :PaymentNotice :NamingSystem
+    :MedicationStatement :EnrollmentResponse :ContactPoint :Money
+    :NutritionOrder :decimal :Questionnaire :id :Attachment
+    :Contributor :Account :Period :CommunicationRequest
+    :DocumentManifest :Task :code :DomainResource :ValueSet :Claim
+    :HumanName :positiveInt :ParameterDefinition :Coding :ResearchStudy
+    :MedicationRequest :Measure :Timing :List :Resource :Encounter
+    :CapabilityStatement :VisionPrescription :Duration :RiskAssessment
+    :ImmunizationRecommendation :uri :CodeableConcept :RelatedPerson
+    :Medication :AppointmentResponse :uuid :Substance
+    :PaymentReconciliation :xhtml :ConceptMap :Person :Condition
+    :CareTeam :Count :StructureDefinition :Procedure :Quantity :Consent
+    :Attribute :Location :Organization :Device :boolean :SupplyRequest
+    :AllergyIntolerance :Narrative :OperationDefinition :ImagingStudy
+    :GuidanceResponse :Media :MeasureReport :GraphDefinition
+    :Annotation :Age :Reference :MetadataResource}}}
