@@ -1,0 +1,43 @@
+{
+  "resourceType": "Claim",
+  "id": "e0aed276-f41b-4d63-a70d-9509cd298dc2",
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "typesystem",
+        "code": "testtype",
+        "display": "display"
+      }
+    ],
+    "text": "text"
+  },
+  "use": "claim",
+  "patient": {
+    "display": "Иванов Петр Олегович"
+  },
+  "created": "2019-11-25",
+  "provider": {
+    "display": "ООО Лечим и Калечим"
+  },
+  "priority": {
+    "coding": [
+      {
+        "system": "prioritysystem",
+        "code": "first"
+      }
+    ]
+  },
+  "originalPrescription": {
+    "reference": "/MedicationRequest/514472b0-f9e1-413a-bf5a-e83c76cb42a2"
+  },
+  "insurance": [
+    {
+      "sequence": 1,
+      "focal": true,
+      "coverage": {
+        "display": "Best coverage"
+      }
+    }
+  ]
+}
