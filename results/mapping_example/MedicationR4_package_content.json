@@ -1,0 +1,64 @@
+{
+  "resourceType": "Medication",
+  "extension": [
+    {
+      "extension": [
+        {
+          "url": "item",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "componentsystem",
+                "code": "code1"
+              }
+            ]
+          }
+        },
+        {
+          "url": "amount",
+          "valueQuantity": {
+            "value": 1
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/3.0/StructureDefinition/extension-Medication.package.content"
+    },
+    {
+      "extension": [
+        {
+          "url": "item",
+          "valueReference": {
+            "reference": "/Medication/1"
+          }
+        },
+        {
+          "url": "amount",
+          "valueQuantity": {
+            "value": 3
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/3.0/StructureDefinition/extension-Medication.package.content"
+    },
+    {
+      "extension": [
+        {
+          "url": "item",
+          "valueReference": {
+            "identifier": {
+              "system": "government",
+              "value": "1"
+            }
+          }
+        },
+        {
+          "url": "amount",
+          "valueQuantity": {
+            "value": 10
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/3.0/StructureDefinition/extension-Medication.package.content"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "resourceType": "Medication",
+  "package": {
+    "content": [
+      {
+        "itemCodeableConcept": {
+          "coding": [
+            {
+              "system": "componentsystem",
+              "code": "code1"
+            }
+          ]
+        },
+        "amount": {
+          "value": 1
+        }
+      },
+      {
+        "itemReference": {
+          "reference": "/Medication/1"
+        },
+        "amount": {
+          "value": 3
+        }
+      },
+      {
+        "itemReference": {
+          "identifier": {
+            "system": "government",
+            "value": "1"
+          }
+        },
+        "amount": {
+          "value": 10
+        }
+      }
+    ]
+  }
+}
