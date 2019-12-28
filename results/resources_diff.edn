@@ -1,0 +1,58 @@
+{:resources
+ {:added
+  {:count 42,
+   :resources
+   #{:ServiceRequest :BiologicallyDerivedProduct
+     :EffectEvidenceSynthesis :MedicinalProductContraindication
+     :Evidence :SubstancePolymer :SubstanceNucleicAcid
+     :SubstanceReferenceInformation :SubstanceSourceMaterial
+     :EvidenceVariable :OrganizationAffiliation :DeviceDefinition
+     :Invoice :CoverageEligibilityResponse :BodyStructure
+     :MedicinalProductAuthorization :ImmunizationEvaluation
+     :MedicinalProductInteraction :MolecularSequence :MedicinalProduct
+     :ChargeItemDefinition :MedicinalProductPackaged
+     :MedicinalProductPharmaceutical :MedicationKnowledge
+     :MedicinalProductIndication :EventDefinition
+     :MedicinalProductUndesirableEffect :SubstanceSpecification
+     :SpecimenDefinition :VerificationResult :RiskEvidenceSynthesis
+     :InsurancePlan :ExampleScenario :SubstanceProtein
+     :ResearchElementDefinition :CatalogEntry :ObservationDefinition
+     :ResearchDefinition :MedicinalProductManufactured
+     :CoverageEligibilityRequest :MedicinalProductIngredient
+     :TerminologyCapabilities}},
+  :deleted
+  {:count 13,
+   :resources
+   #{:ProcedureRequest :DeviceComponent :ReferralRequest
+     :ProcessResponse :Sequence :DataElement :ExpansionProfile
+     :EligibilityRequest :EligibilityResponse :ServiceDefinition
+     :BodySite :ProcessRequest :ImagingManifest}},
+  :shared
+  {:count 102,
+   :resources
+   #{:DeviceRequest :DeviceMetric :CarePlan :Observation
+     :EnrollmentRequest :Group :MessageDefinition :Appointment
+     :QuestionnaireResponse :EpisodeOfCare :SupplyDelivery
+     :AdverseEvent :Endpoint :CompartmentDefinition :DetectedIssue
+     :MedicationAdministration :ImplementationGuide :Goal
+     :Communication :Schedule :DocumentReference :Coverage :AuditEvent
+     :MessageHeader :Contract :CodeSystem :PlanDefinition
+     :ClaimResponse :ChargeItem :Parameters :ClinicalImpression
+     :FamilyMemberHistory :Binary :Composition :PractitionerRole
+     :HealthcareService :Patient :MedicationDispense
+     :DeviceUseStatement :StructureMap :Library :Basic :Slot
+     :ActivityDefinition :Specimen :DiagnosticReport :Subscription
+     :RequestGroup :Provenance :Practitioner :Flag
+     :ExplanationOfBenefit :Linkage :OperationOutcome :Immunization
+     :ResearchSubject :PaymentNotice :NamingSystem :MedicationStatement
+     :EnrollmentResponse :NutritionOrder :Questionnaire :Account
+     :CommunicationRequest :DocumentManifest :Task :ValueSet :Claim
+     :ResearchStudy :MedicationRequest :Measure :List :Encounter
+     :CapabilityStatement :VisionPrescription :RiskAssessment
+     :ImmunizationRecommendation :RelatedPerson :Medication
+     :AppointmentResponse :Substance :PaymentReconciliation :ConceptMap
+     :Person :Condition :CareTeam :StructureDefinition :Procedure
+     :Consent :Attribute :Location :Organization :Device :SupplyRequest
+     :AllergyIntolerance :OperationDefinition :ImagingStudy
+     :GuidanceResponse :Media :MeasureReport :GraphDefinition
+     :MetadataResource}}}}
