@@ -45,12 +45,22 @@
    (map first)
    set))
 
+(defn fm-diff [s1 s2]
+  (->
+   (clojure.set/difference s1 s2)
+   sort))
+
+(defn fm-intersect [s1 s2]
+  (->
+   (clojure.set/intersection s1 s2)
+   sort))
+
 (defn rfn [acc r]
   (let [r3-fields (get-resource-fields r3 r)
         r4-fields (get-resource-fields r4 r)
-        added     (clojure.set/difference r4-fields r3-fields)
-        deleted   (clojure.set/difference r3-fields r4-fields)
-        shared    (clojure.set/intersection r3-fields r4-fields)]
+        added     (fm-diff r4-fields r3-fields)
+        deleted   (fm-diff r3-fields r4-fields)
+        shared    (fm-intersect r3-fields r4-fields)]
     (assoc
      acc
      r
@@ -61,18 +71,14 @@
       :shared  {:count  (count shared)
                 :fields shared}})))
 
-(defn generate-fields-diff [shared-resources]
-  )
-
 (defn get-resources-diff [get-resources key]
   (let [r3-resources      (get-resources r3)
         r4-resources      (get-resources r4)
-        added-resources   (clojure.set/difference r4-resources r3-resources)
-        deleted-resources (clojure.set/difference r3-resources r4-resources)
-        shared-resources  (clojure.set/intersection r3-resources r4-resources)
+        added-resources   (fm-diff r4-resources r3-resources)
+        deleted-resources (fm-diff r3-resources r4-resources)
+        shared-resources  (fm-intersect r3-resources r4-resources)
         fields            (when-not (= :primitive key)
-                            {:fields (reduce rfn {} shared-resources)})
-        ]
+                            {:fields (reduce rfn {} shared-resources)})]
     (merge
      {:added   {:count (count added-resources)
                 key    added-resources}
