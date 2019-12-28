@@ -1,144 +1,312 @@
-({:r3 ("accident" "date"), :r4 ("accident" "date")}
- {:r3 ("accident" "id"), :r4 ("accident" "id")}
- {:r3 ("accident" "location" "Address"),
-  :r4 ("accident" "location" "Address")}
- {:r3 ("accident" "location" "Reference"),
-  :r4 ("accident" "location" "Reference")}
- {:r3 ("accident" "type"), :r4 ("accident" "type")}
- {:r3 ("billablePeriod"), :r4 ("billablePeriod")}
- {:r3 ("careTeam" [:*] "id"), :r4 ("careTeam" [:*] "id")}
- {:r3 ("careTeam" [:*] "provider"), :r4 ("careTeam" [:*] "provider")}
- {:r3 ("careTeam" [:*] "qualification"),
-  :r4 ("careTeam" [:*] "qualification")}
- {:r3 ("careTeam" [:*] "responsible"),
-  :r4 ("careTeam" [:*] "responsible")}
- {:r3 ("careTeam" [:*] "role"), :r4 ("careTeam" [:*] "role")}
- {:r3 ("careTeam" [:*] "sequence"), :r4 ("careTeam" [:*] "sequence")}
- {:r3 ("contained" [:*]), :r4 ("contained" [:*])}
- {:r3 ("created"), :r4 ("created")}
- {:r3 ("diagnosis" [:*] "diagnosis" "CodeableConcept"),
-  :r4 ("diagnosis" [:*] "diagnosis" "CodeableConcept")}
- {:r3 ("diagnosis" [:*] "diagnosis" "Reference"),
-  :r4 ("diagnosis" [:*] "diagnosis" "Reference")}
- {:r3 ("diagnosis" [:*] "id"), :r4 ("diagnosis" [:*] "id")}
- {:r3 ("diagnosis" [:*] "packageCode"),
-  :r4 ("diagnosis" [:*] "packageCode")}
- {:r3 ("diagnosis" [:*] "sequence"), :r4 ("diagnosis" [:*] "sequence")}
- {:r3 ("diagnosis" [:*] "type" [:*]),
-  :r4 ("diagnosis" [:*] "type" [:*])}
- {:r3 ("enterer"), :r4 ("enterer")}
- {:r3 ("facility"), :r4 ("facility")}
- {:r3 ("fundsReserve"), :r4 ("fundsReserve")}
- {:r3 ("id"), :r4 ("id")}
- {:r3 ("identifier" [:*]), :r4 ("identifier" [:*])}
- {:r3 ("implicitRules"), :r4 ("implicitRules")}
- {:r3 ("insurance" [:*] "businessArrangement"),
-  :r4 ("insurance" [:*] "businessArrangement")}
- {:r3 ("insurance" [:*] "claimResponse"),
-  :r4 ("insurance" [:*] "claimResponse")}
- {:r3 ("insurance" [:*] "coverage"), :r4 ("insurance" [:*] "coverage")}
- {:r3 ("insurance" [:*] "focal"), :r4 ("insurance" [:*] "focal")}
- {:r3 ("insurance" [:*] "id"), :r4 ("insurance" [:*] "id")}
- {:r3 ("insurance" [:*] "preAuthRef" [:*]),
-  :r4 ("insurance" [:*] "preAuthRef" [:*])}
- {:r3 ("insurance" [:*] "sequence"), :r4 ("insurance" [:*] "sequence")}
- {:r3 ("insurer"), :r4 ("insurer")}
- {:r3 ("item" [:*] "bodySite"), :r4 ("item" [:*] "bodySite")}
- {:r3 ("item" [:*] "category"), :r4 ("item" [:*] "category")}
- {:r3 ("item" [:*] "detail" [:*] "category"),
-  :r4 ("item" [:*] "detail" [:*] "category")}
- {:r3 ("item" [:*] "detail" [:*] "factor"),
-  :r4 ("item" [:*] "detail" [:*] "factor")}
- {:r3 ("item" [:*] "detail" [:*] "id"),
-  :r4 ("item" [:*] "detail" [:*] "id")}
- {:r3 ("item" [:*] "detail" [:*] "modifier" [:*]),
-  :r4 ("item" [:*] "detail" [:*] "modifier" [:*])}
- {:r3 ("item" [:*] "detail" [:*] "net"),
-  :r4 ("item" [:*] "detail" [:*] "net")}
- {:r3 ("item" [:*] "detail" [:*] "programCode" [:*]),
-  :r4 ("item" [:*] "detail" [:*] "programCode" [:*])}
- {:r3 ("item" [:*] "detail" [:*] "quantity"),
-  :r4 ("item" [:*] "detail" [:*] "quantity")}
- {:r3 ("item" [:*] "detail" [:*] "revenue"),
-  :r4 ("item" [:*] "detail" [:*] "revenue")}
- {:r3 ("item" [:*] "detail" [:*] "sequence"),
-  :r4 ("item" [:*] "detail" [:*] "sequence")}
- {:r3 ("item" [:*] "detail" [:*] "subDetail" [:*] "category"),
-  :r4 ("item" [:*] "detail" [:*] "subDetail" [:*] "category")}
- {:r3 ("item" [:*] "detail" [:*] "subDetail" [:*] "factor"),
-  :r4 ("item" [:*] "detail" [:*] "subDetail" [:*] "factor")}
- {:r3 ("item" [:*] "detail" [:*] "subDetail" [:*] "id"),
-  :r4 ("item" [:*] "detail" [:*] "subDetail" [:*] "id")}
- {:r3 ("item" [:*] "detail" [:*] "subDetail" [:*] "modifier" [:*]),
-  :r4 ("item" [:*] "detail" [:*] "subDetail" [:*] "modifier" [:*])}
- {:r3 ("item" [:*] "detail" [:*] "subDetail" [:*] "net"),
-  :r4 ("item" [:*] "detail" [:*] "subDetail" [:*] "net")}
- {:r3 ("item" [:*] "detail" [:*] "subDetail" [:*] "programCode" [:*]),
-  :r4 ("item" [:*] "detail" [:*] "subDetail" [:*] "programCode" [:*])}
- {:r3 ("item" [:*] "detail" [:*] "subDetail" [:*] "quantity"),
-  :r4 ("item" [:*] "detail" [:*] "subDetail" [:*] "quantity")}
- {:r3 ("item" [:*] "detail" [:*] "subDetail" [:*] "revenue"),
-  :r4 ("item" [:*] "detail" [:*] "subDetail" [:*] "revenue")}
- {:r3 ("item" [:*] "detail" [:*] "subDetail" [:*] "sequence"),
-  :r4 ("item" [:*] "detail" [:*] "subDetail" [:*] "sequence")}
- {:r3 ("item" [:*] "detail" [:*] "subDetail" [:*] "udi" [:*]),
-  :r4 ("item" [:*] "detail" [:*] "subDetail" [:*] "udi" [:*])}
- {:r3 ("item" [:*] "detail" [:*] "subDetail" [:*] "unitPrice"),
-  :r4 ("item" [:*] "detail" [:*] "subDetail" [:*] "unitPrice")}
- {:r3 ("item" [:*] "detail" [:*] "udi" [:*]),
-  :r4 ("item" [:*] "detail" [:*] "udi" [:*])}
- {:r3 ("item" [:*] "detail" [:*] "unitPrice"),
-  :r4 ("item" [:*] "detail" [:*] "unitPrice")}
- {:r3 ("item" [:*] "encounter" [:*]),
-  :r4 ("item" [:*] "encounter" [:*])}
- {:r3 ("item" [:*] "factor"), :r4 ("item" [:*] "factor")}
- {:r3 ("item" [:*] "id"), :r4 ("item" [:*] "id")}
- {:r3 ("item" [:*] "location" "Address"),
-  :r4 ("item" [:*] "location" "Address")}
- {:r3 ("item" [:*] "location" "CodeableConcept"),
-  :r4 ("item" [:*] "location" "CodeableConcept")}
- {:r3 ("item" [:*] "location" "Reference"),
-  :r4 ("item" [:*] "location" "Reference")}
- {:r3 ("item" [:*] "modifier" [:*]), :r4 ("item" [:*] "modifier" [:*])}
- {:r3 ("item" [:*] "net"), :r4 ("item" [:*] "net")}
- {:r3 ("item" [:*] "programCode" [:*]),
-  :r4 ("item" [:*] "programCode" [:*])}
- {:r3 ("item" [:*] "quantity"), :r4 ("item" [:*] "quantity")}
- {:r3 ("item" [:*] "revenue"), :r4 ("item" [:*] "revenue")}
- {:r3 ("item" [:*] "sequence"), :r4 ("item" [:*] "sequence")}
- {:r3 ("item" [:*] "serviced" "Period"),
-  :r4 ("item" [:*] "serviced" "Period")}
- {:r3 ("item" [:*] "serviced" "date"),
-  :r4 ("item" [:*] "serviced" "date")}
- {:r3 ("item" [:*] "subSite" [:*]), :r4 ("item" [:*] "subSite" [:*])}
- {:r3 ("item" [:*] "udi" [:*]), :r4 ("item" [:*] "udi" [:*])}
- {:r3 ("item" [:*] "unitPrice"), :r4 ("item" [:*] "unitPrice")}
- {:r3 ("language"), :r4 ("language")}
- {:r3 ("meta"), :r4 ("meta")}
- {:r3 ("originalPrescription"), :r4 ("originalPrescription")}
- {:r3 ("patient"), :r4 ("patient")}
- {:r3 ("payee" "id"), :r4 ("payee" "id")}
- {:r3 ("payee" "party"), :r4 ("payee" "party")}
- {:r3 ("payee" "type"), :r4 ("payee" "type")}
- {:r3 ("prescription"), :r4 ("prescription")}
- {:r3 ("priority"), :r4 ("priority")}
- {:r3 ("procedure" [:*] "date"), :r4 ("procedure" [:*] "date")}
- {:r3 ("procedure" [:*] "id"), :r4 ("procedure" [:*] "id")}
- {:r3 ("procedure" [:*] "procedure" "CodeableConcept"),
-  :r4 ("procedure" [:*] "procedure" "CodeableConcept")}
- {:r3 ("procedure" [:*] "procedure" "Reference"),
-  :r4 ("procedure" [:*] "procedure" "Reference")}
- {:r3 ("procedure" [:*] "sequence"), :r4 ("procedure" [:*] "sequence")}
- {:r3 ("provider"), :r4 ("provider")}
- {:r3 ("referral"), :r4 ("referral")}
- {:r3 ("related" [:*] "claim"), :r4 ("related" [:*] "claim")}
- {:r3 ("related" [:*] "id"), :r4 ("related" [:*] "id")}
- {:r3 ("related" [:*] "reference"), :r4 ("related" [:*] "reference")}
- {:r3 ("related" [:*] "relationship"),
-  :r4 ("related" [:*] "relationship")}
- {:r3 ("status"), :r4 ("status")}
- {:r3 ("subType"), :r4 ("subType")}
- {:r3 ("text"), :r4 ("text")}
- {:r3 ("total"), :r4 ("total")}
- {:r3 ("type"), :r4 ("type")}
- {:r3 ("use"), :r4 ("use")})
+#:ih{:direction [:r3 :r4],
+     :sights
+     #:ihs{:Claim
+           #:ih{:direction [:r3 :r4],
+                :rules
+                ({:r3 ("accident" "date"), :r4 ("accident" "date")}
+                 {:r3 ("accident" "id"), :r4 ("accident" "id")}
+                 {:r3 ("accident" "location" "Address"),
+                  :r4 ("accident" "location" "Address")}
+                 {:r3 ("accident" "location" "Reference"),
+                  :r4 ("accident" "location" "Reference")}
+                 {:r3 ("accident" "type"), :r4 ("accident" "type")}
+                 {:r3 ("billablePeriod"), :r4 ("billablePeriod")}
+                 {:r3 ("careTeam" [:*] "id"),
+                  :r4 ("careTeam" [:*] "id")}
+                 {:r3 ("careTeam" [:*] "provider"),
+                  :r4 ("careTeam" [:*] "provider")}
+                 {:r3 ("careTeam" [:*] "qualification"),
+                  :r4 ("careTeam" [:*] "qualification")}
+                 {:r3 ("careTeam" [:*] "responsible"),
+                  :r4 ("careTeam" [:*] "responsible")}
+                 {:r3 ("careTeam" [:*] "role"),
+                  :r4 ("careTeam" [:*] "role")}
+                 {:r3 ("careTeam" [:*] "sequence"),
+                  :r4 ("careTeam" [:*] "sequence")}
+                 {:r3 ("contained" [:*]), :r4 ("contained" [:*])}
+                 {:r3 ("created"), :r4 ("created")}
+                 {:r3 ("diagnosis" [:*] "diagnosis" "CodeableConcept"),
+                  :r4 ("diagnosis" [:*] "diagnosis" "CodeableConcept")}
+                 {:r3 ("diagnosis" [:*] "diagnosis" "Reference"),
+                  :r4 ("diagnosis" [:*] "diagnosis" "Reference")}
+                 {:r3 ("diagnosis" [:*] "id"),
+                  :r4 ("diagnosis" [:*] "id")}
+                 {:r3 ("diagnosis" [:*] "packageCode"),
+                  :r4 ("diagnosis" [:*] "packageCode")}
+                 {:r3 ("diagnosis" [:*] "sequence"),
+                  :r4 ("diagnosis" [:*] "sequence")}
+                 {:r3 ("diagnosis" [:*] "type" [:*]),
+                  :r4 ("diagnosis" [:*] "type" [:*])}
+                 {:r3 ("enterer"), :r4 ("enterer")}
+                 {:r3 ("facility"), :r4 ("facility")}
+                 {:r3 ("fundsReserve"), :r4 ("fundsReserve")}
+                 {:r3 ("id"), :r4 ("id")}
+                 {:r3 ("identifier" [:*]), :r4 ("identifier" [:*])}
+                 {:r3 ("implicitRules"), :r4 ("implicitRules")}
+                 {:r3 ("insurance" [:*] "businessArrangement"),
+                  :r4 ("insurance" [:*] "businessArrangement")}
+                 {:r3 ("insurance" [:*] "claimResponse"),
+                  :r4 ("insurance" [:*] "claimResponse")}
+                 {:r3 ("insurance" [:*] "coverage"),
+                  :r4 ("insurance" [:*] "coverage")}
+                 {:r3 ("insurance" [:*] "focal"),
+                  :r4 ("insurance" [:*] "focal")}
+                 {:r3 ("insurance" [:*] "id"),
+                  :r4 ("insurance" [:*] "id")}
+                 {:r3 ("insurance" [:*] "preAuthRef" [:*]),
+                  :r4 ("insurance" [:*] "preAuthRef" [:*])}
+                 {:r3 ("insurance" [:*] "sequence"),
+                  :r4 ("insurance" [:*] "sequence")}
+                 {:r3 ("insurer"), :r4 ("insurer")}
+                 {:r3 ("item" [:*] "bodySite"),
+                  :r4 ("item" [:*] "bodySite")}
+                 {:r3 ("item" [:*] "category"),
+                  :r4 ("item" [:*] "category")}
+                 {:r3 ("item" [:*] "detail" [:*] "category"),
+                  :r4 ("item" [:*] "detail" [:*] "category")}
+                 {:r3 ("item" [:*] "detail" [:*] "factor"),
+                  :r4 ("item" [:*] "detail" [:*] "factor")}
+                 {:r3 ("item" [:*] "detail" [:*] "id"),
+                  :r4 ("item" [:*] "detail" [:*] "id")}
+                 {:r3 ("item" [:*] "detail" [:*] "modifier" [:*]),
+                  :r4 ("item" [:*] "detail" [:*] "modifier" [:*])}
+                 {:r3 ("item" [:*] "detail" [:*] "net"),
+                  :r4 ("item" [:*] "detail" [:*] "net")}
+                 {:r3 ("item" [:*] "detail" [:*] "programCode" [:*]),
+                  :r4 ("item" [:*] "detail" [:*] "programCode" [:*])}
+                 {:r3 ("item" [:*] "detail" [:*] "quantity"),
+                  :r4 ("item" [:*] "detail" [:*] "quantity")}
+                 {:r3 ("item" [:*] "detail" [:*] "revenue"),
+                  :r4 ("item" [:*] "detail" [:*] "revenue")}
+                 {:r3 ("item" [:*] "detail" [:*] "sequence"),
+                  :r4 ("item" [:*] "detail" [:*] "sequence")}
+                 {:r3
+                  ("item"
+                   [:*]
+                   "detail"
+                   [:*]
+                   "subDetail"
+                   [:*]
+                   "category"),
+                  :r4
+                  ("item"
+                   [:*]
+                   "detail"
+                   [:*]
+                   "subDetail"
+                   [:*]
+                   "category")}
+                 {:r3
+                  ("item"
+                   [:*]
+                   "detail"
+                   [:*]
+                   "subDetail"
+                   [:*]
+                   "factor"),
+                  :r4
+                  ("item"
+                   [:*]
+                   "detail"
+                   [:*]
+                   "subDetail"
+                   [:*]
+                   "factor")}
+                 {:r3
+                  ("item" [:*] "detail" [:*] "subDetail" [:*] "id"),
+                  :r4
+                  ("item" [:*] "detail" [:*] "subDetail" [:*] "id")}
+                 {:r3
+                  ("item"
+                   [:*]
+                   "detail"
+                   [:*]
+                   "subDetail"
+                   [:*]
+                   "modifier"
+                   [:*]),
+                  :r4
+                  ("item"
+                   [:*]
+                   "detail"
+                   [:*]
+                   "subDetail"
+                   [:*]
+                   "modifier"
+                   [:*])}
+                 {:r3
+                  ("item" [:*] "detail" [:*] "subDetail" [:*] "net"),
+                  :r4
+                  ("item" [:*] "detail" [:*] "subDetail" [:*] "net")}
+                 {:r3
+                  ("item"
+                   [:*]
+                   "detail"
+                   [:*]
+                   "subDetail"
+                   [:*]
+                   "programCode"
+                   [:*]),
+                  :r4
+                  ("item"
+                   [:*]
+                   "detail"
+                   [:*]
+                   "subDetail"
+                   [:*]
+                   "programCode"
+                   [:*])}
+                 {:r3
+                  ("item"
+                   [:*]
+                   "detail"
+                   [:*]
+                   "subDetail"
+                   [:*]
+                   "quantity"),
+                  :r4
+                  ("item"
+                   [:*]
+                   "detail"
+                   [:*]
+                   "subDetail"
+                   [:*]
+                   "quantity")}
+                 {:r3
+                  ("item"
+                   [:*]
+                   "detail"
+                   [:*]
+                   "subDetail"
+                   [:*]
+                   "revenue"),
+                  :r4
+                  ("item"
+                   [:*]
+                   "detail"
+                   [:*]
+                   "subDetail"
+                   [:*]
+                   "revenue")}
+                 {:r3
+                  ("item"
+                   [:*]
+                   "detail"
+                   [:*]
+                   "subDetail"
+                   [:*]
+                   "sequence"),
+                  :r4
+                  ("item"
+                   [:*]
+                   "detail"
+                   [:*]
+                   "subDetail"
+                   [:*]
+                   "sequence")}
+                 {:r3
+                  ("item"
+                   [:*]
+                   "detail"
+                   [:*]
+                   "subDetail"
+                   [:*]
+                   "udi"
+                   [:*]),
+                  :r4
+                  ("item"
+                   [:*]
+                   "detail"
+                   [:*]
+                   "subDetail"
+                   [:*]
+                   "udi"
+                   [:*])}
+                 {:r3
+                  ("item"
+                   [:*]
+                   "detail"
+                   [:*]
+                   "subDetail"
+                   [:*]
+                   "unitPrice"),
+                  :r4
+                  ("item"
+                   [:*]
+                   "detail"
+                   [:*]
+                   "subDetail"
+                   [:*]
+                   "unitPrice")}
+                 {:r3 ("item" [:*] "detail" [:*] "udi" [:*]),
+                  :r4 ("item" [:*] "detail" [:*] "udi" [:*])}
+                 {:r3 ("item" [:*] "detail" [:*] "unitPrice"),
+                  :r4 ("item" [:*] "detail" [:*] "unitPrice")}
+                 {:r3 ("item" [:*] "encounter" [:*]),
+                  :r4 ("item" [:*] "encounter" [:*])}
+                 {:r3 ("item" [:*] "factor"),
+                  :r4 ("item" [:*] "factor")}
+                 {:r3 ("item" [:*] "id"), :r4 ("item" [:*] "id")}
+                 {:r3 ("item" [:*] "location" "Address"),
+                  :r4 ("item" [:*] "location" "Address")}
+                 {:r3 ("item" [:*] "location" "CodeableConcept"),
+                  :r4 ("item" [:*] "location" "CodeableConcept")}
+                 {:r3 ("item" [:*] "location" "Reference"),
+                  :r4 ("item" [:*] "location" "Reference")}
+                 {:r3 ("item" [:*] "modifier" [:*]),
+                  :r4 ("item" [:*] "modifier" [:*])}
+                 {:r3 ("item" [:*] "net"), :r4 ("item" [:*] "net")}
+                 {:r3 ("item" [:*] "programCode" [:*]),
+                  :r4 ("item" [:*] "programCode" [:*])}
+                 {:r3 ("item" [:*] "quantity"),
+                  :r4 ("item" [:*] "quantity")}
+                 {:r3 ("item" [:*] "revenue"),
+                  :r4 ("item" [:*] "revenue")}
+                 {:r3 ("item" [:*] "sequence"),
+                  :r4 ("item" [:*] "sequence")}
+                 {:r3 ("item" [:*] "serviced" "Period"),
+                  :r4 ("item" [:*] "serviced" "Period")}
+                 {:r3 ("item" [:*] "serviced" "date"),
+                  :r4 ("item" [:*] "serviced" "date")}
+                 {:r3 ("item" [:*] "subSite" [:*]),
+                  :r4 ("item" [:*] "subSite" [:*])}
+                 {:r3 ("item" [:*] "udi" [:*]),
+                  :r4 ("item" [:*] "udi" [:*])}
+                 {:r3 ("item" [:*] "unitPrice"),
+                  :r4 ("item" [:*] "unitPrice")}
+                 {:r3 ("language"), :r4 ("language")}
+                 {:r3 ("meta"), :r4 ("meta")}
+                 {:r3 ("originalPrescription"),
+                  :r4 ("originalPrescription")}
+                 {:r3 ("patient"), :r4 ("patient")}
+                 {:r3 ("payee" "id"), :r4 ("payee" "id")}
+                 {:r3 ("payee" "party"), :r4 ("payee" "party")}
+                 {:r3 ("payee" "type"), :r4 ("payee" "type")}
+                 {:r3 ("prescription"), :r4 ("prescription")}
+                 {:r3 ("priority"), :r4 ("priority")}
+                 {:r3 ("procedure" [:*] "date"),
+                  :r4 ("procedure" [:*] "date")}
+                 {:r3 ("procedure" [:*] "id"),
+                  :r4 ("procedure" [:*] "id")}
+                 {:r3 ("procedure" [:*] "procedure" "CodeableConcept"),
+                  :r4 ("procedure" [:*] "procedure" "CodeableConcept")}
+                 {:r3 ("procedure" [:*] "procedure" "Reference"),
+                  :r4 ("procedure" [:*] "procedure" "Reference")}
+                 {:r3 ("procedure" [:*] "sequence"),
+                  :r4 ("procedure" [:*] "sequence")}
+                 {:r3 ("provider"), :r4 ("provider")}
+                 {:r3 ("referral"), :r4 ("referral")}
+                 {:r3 ("related" [:*] "claim"),
+                  :r4 ("related" [:*] "claim")}
+                 {:r3 ("related" [:*] "id"), :r4 ("related" [:*] "id")}
+                 {:r3 ("related" [:*] "reference"),
+                  :r4 ("related" [:*] "reference")}
+                 {:r3 ("related" [:*] "relationship"),
+                  :r4 ("related" [:*] "relationship")}
+                 {:r3 ("status"), :r4 ("status")}
+                 {:r3 ("subType"), :r4 ("subType")}
+                 {:r3 ("text"), :r4 ("text")}
+                 {:r3 ("total"), :r4 ("total")}
+                 {:r3 ("type"), :r4 ("type")}
+                 {:r3 ("use"), :r4 ("use")})}},
+     :rules ([:r3 [:Claim [:*] :ihs/Claim]] [:r4 [:Claim [:*]]])}

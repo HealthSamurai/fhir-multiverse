@@ -131,18 +131,46 @@
    identity-rule))
 
 (do
-  (defn rules-by-resource [resource]
-    (let [shared-fields (get-in diff [:resources :fields resource :shared :fields])]
-      (->>
-       (map #(concat [%] [(get-attribute %)]) shared-fields)
-       (filter #(-> % second :type))
-       (map first)
-       (map identity-by-key)
-       ))
-
+  (defn get-rename-rules [resource]
+    [])
+  (defn get-rules-by-resource [resource]
+    (let [shared-fields (get-in diff [:resources :fields resource :shared :fields])
+          copy-rules    (->>
+                         (map #(concat [%] [(get-attribute %)]) shared-fields)
+                         (filter #(-> % second :type))
+                         (map first)
+                         (map identity-by-key)
+                         )
+          rename-rules  (get-rename-rules resource)]
+      (concat copy-rules rename-rules)))
+  (defn get-converter-by-resource [resource]
+    #:ih{:direction [:r3 :r4]
+         :rules     (get-rules-by-resource resource)}
     ))
 
 
+
+
+(do
+  (defn generate-sights [resources]
+    (reduce (fn [acc k] (assoc acc (keyword (str "ihs/" (name k)))
+                             (get-converter-by-resource k)))
+            {}
+            resources))
+
+  (defn generate-rules [resources]
+    (reduce (fn [acc k]
+              (concat acc {:r3 [k [:*] (keyword (str "ihs/" (name k)))]
+                           :r4 [k [:*]]}))
+            []
+            resources)
+    )
+  (def resources-to-convert [:Claim])
+  (def super-converter
+    #:ih{:direction [:r3 :r4]
+         :sights    (generate-sights resources-to-convert)
+         :rules     (concat (generate-rules resources-to-convert)
+                            [])}))
 
 (spit
  "results/diff.edn"
@@ -152,7 +180,9 @@
 (spit
  "results/converter.edn"
  (with-out-str
-   (clojure.pprint/pprint (rules-by-resource :Claim))))
+   (clojure.pprint/pprint super-converter)))
+
+[:Claim [:*]]
 
 (def different-objects
   [:Patient :HumanName :decimal])
