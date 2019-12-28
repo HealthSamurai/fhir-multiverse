@@ -16,9 +16,9 @@
 (def r3 (load-version "3.0.1"))
 
 (defn get-resources [fhir]
-  (->
-   fhir
-   (get-in [:resources :Entity])
+  (->>
+   (get-in fhir [:resources :Entity])
+   (filter #(= "resource" (get-in % [1 :type])))
    keys
    set))
 
@@ -30,15 +30,28 @@
       ]
     (def diff
       {:resources
-       {:added   added-resources
-        :deleted deleted-resources
-        :shared  shared-resources}})
+       {:added   {:count (count added-resources)
+                  :resources added-resources}
+        :deleted {:count (count deleted-resources)
+                  :resources deleted-resources}
+        :shared  {:count (count shared-resources)
+                  :resources shared-resources}}})
 
     (spit
      "resources_diff.edn"
      (with-out-str
        (clojure.pprint/pprint diff)))
     )
+
+(def different-objects
+  [:Patient :HumanName :decimal])
+
+(->>
+    (get-in r4 [:resources :Entity])
+    (filter #(get-in % [1 :type]))
+    keys
+    )
+
 (clojure.pprint/pprint diff)
 
 (comment
