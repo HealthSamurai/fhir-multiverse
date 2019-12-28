@@ -29,6 +29,7 @@
          ;; support for java 11+
          org.clojure/core.rrb-vector {:mvn/version "0.0.14"}
 
+         spec-provider               {:mvn/version "0.4.14"}
 
          }
  :aliases

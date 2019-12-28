@@ -1,0 +1,6 @@
+
+;; %s
+
+(s/def %s
+  (s/keys :req [%s]
+          :opt [%s]))
