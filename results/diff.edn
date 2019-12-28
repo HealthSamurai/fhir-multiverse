@@ -324,7 +324,7 @@
       :CarePlan.title)}},
    :Observation
    {:added
-    {:count 44,
+    {:count 11,
      :fields
      (:Observation.component.value.boolean
       :Observation.component.value.integer
@@ -336,40 +336,7 @@
       :Observation.hasMember
       :Observation.note
       :Observation.partOf
-      :Observation.value.integer
-      :ObservationDefinition.abnormalCodedValueSet
-      :ObservationDefinition.category
-      :ObservationDefinition.code
-      :ObservationDefinition.contained
-      :ObservationDefinition.criticalCodedValueSet
-      :ObservationDefinition.id
-      :ObservationDefinition.identifier
-      :ObservationDefinition.implicitRules
-      :ObservationDefinition.language
-      :ObservationDefinition.meta
-      :ObservationDefinition.method
-      :ObservationDefinition.multipleResultsAllowed
-      :ObservationDefinition.normalCodedValueSet
-      :ObservationDefinition.permittedDataType
-      :ObservationDefinition.preferredReportName
-      :ObservationDefinition.qualifiedInterval
-      :ObservationDefinition.qualifiedInterval.age
-      :ObservationDefinition.qualifiedInterval.appliesTo
-      :ObservationDefinition.qualifiedInterval.category
-      :ObservationDefinition.qualifiedInterval.condition
-      :ObservationDefinition.qualifiedInterval.context
-      :ObservationDefinition.qualifiedInterval.gender
-      :ObservationDefinition.qualifiedInterval.gestationalAge
-      :ObservationDefinition.qualifiedInterval.id
-      :ObservationDefinition.qualifiedInterval.range
-      :ObservationDefinition.quantitativeDetails
-      :ObservationDefinition.quantitativeDetails.conversionFactor
-      :ObservationDefinition.quantitativeDetails.customaryUnit
-      :ObservationDefinition.quantitativeDetails.decimalPrecision
-      :ObservationDefinition.quantitativeDetails.id
-      :ObservationDefinition.quantitativeDetails.unit
-      :ObservationDefinition.text
-      :ObservationDefinition.validCodedValueSet)},
+      :Observation.value.integer)},
     :deleted
     {:count 8,
      :fields
@@ -565,7 +532,7 @@
       :Appointment.indication
       :Appointment.reason)},
     :shared
-    {:count 42,
+    {:count 28,
      :fields
      (:Appointment.appointmentType
       :Appointment.comment
@@ -594,21 +561,7 @@
       :Appointment.start
       :Appointment.status
       :Appointment.supportingInformation
-      :Appointment.text
-      :AppointmentResponse.actor
-      :AppointmentResponse.appointment
-      :AppointmentResponse.comment
-      :AppointmentResponse.contained
-      :AppointmentResponse.end
-      :AppointmentResponse.id
-      :AppointmentResponse.identifier
-      :AppointmentResponse.implicitRules
-      :AppointmentResponse.language
-      :AppointmentResponse.meta
-      :AppointmentResponse.participantStatus
-      :AppointmentResponse.participantType
-      :AppointmentResponse.start
-      :AppointmentResponse.text)}},
+      :Appointment.text)}},
    :QuestionnaireResponse
    {:added
     {:count 2,
@@ -1088,7 +1041,7 @@
       :Goal.text)}},
    :Communication
    {:added
-    {:count 11,
+    {:count 7,
      :fields
      (:Communication.about
       :Communication.encounter
@@ -1096,25 +1049,16 @@
       :Communication.instantiatesCanonical
       :Communication.instantiatesUri
       :Communication.priority
-      :Communication.statusReason
-      :CommunicationRequest.about
-      :CommunicationRequest.doNotPerform
-      :CommunicationRequest.encounter
-      :CommunicationRequest.statusReason)},
+      :Communication.statusReason)},
     :deleted
-    {:count 9,
+    {:count 4,
      :fields
      (:Communication.context
       :Communication.definition
       :Communication.notDone
-      :Communication.notDoneReason
-      :CommunicationRequest.context
-      :CommunicationRequest.requester.agent
-      :CommunicationRequest.requester.id
-      :CommunicationRequest.requester.onBehalfOf
-      :CommunicationRequest.topic)},
+      :Communication.notDoneReason)},
     :shared
-    {:count 58,
+    {:count 27,
      :fields
      (:Communication.basedOn
       :Communication.category
@@ -1142,38 +1086,7 @@
       :Communication.status
       :Communication.subject
       :Communication.text
-      :Communication.topic
-      :CommunicationRequest.authoredOn
-      :CommunicationRequest.basedOn
-      :CommunicationRequest.category
-      :CommunicationRequest.contained
-      :CommunicationRequest.groupIdentifier
-      :CommunicationRequest.id
-      :CommunicationRequest.identifier
-      :CommunicationRequest.implicitRules
-      :CommunicationRequest.language
-      :CommunicationRequest.medium
-      :CommunicationRequest.meta
-      :CommunicationRequest.note
-      :CommunicationRequest.occurrence.Period
-      :CommunicationRequest.occurrence.dateTime
-      :CommunicationRequest.ommunicationRequest.occurrence
-      :CommunicationRequest.ommunicationRequest.payload.content
-      :CommunicationRequest.payload
-      :CommunicationRequest.payload.content.Attachment
-      :CommunicationRequest.payload.content.Reference
-      :CommunicationRequest.payload.content.string
-      :CommunicationRequest.payload.id
-      :CommunicationRequest.priority
-      :CommunicationRequest.reasonCode
-      :CommunicationRequest.reasonReference
-      :CommunicationRequest.recipient
-      :CommunicationRequest.replaces
-      :CommunicationRequest.requester
-      :CommunicationRequest.sender
-      :CommunicationRequest.status
-      :CommunicationRequest.subject
-      :CommunicationRequest.text)}},
+      :Communication.topic)}},
    :Schedule
    {:added {:count 0, :fields ()},
     :deleted {:count 0, :fields ()},
@@ -1246,7 +1159,7 @@
       :DocumentReference.type)}},
    :Coverage
    {:added
-    {:count 116,
+    {:count 16,
      :fields
      (:Coverage.class
       :Coverage.class.id
@@ -1263,107 +1176,7 @@
       :Coverage.costToBeneficiary.value.Money
       :Coverage.costToBeneficiary.value.Quantity
       :Coverage.overage.costToBeneficiary.value
-      :Coverage.subrogation
-      :CoverageEligibilityRequest.contained
-      :CoverageEligibilityRequest.created
-      :CoverageEligibilityRequest.enterer
-      :CoverageEligibilityRequest.facility
-      :CoverageEligibilityRequest.id
-      :CoverageEligibilityRequest.identifier
-      :CoverageEligibilityRequest.implicitRules
-      :CoverageEligibilityRequest.insurance
-      :CoverageEligibilityRequest.insurance.businessArrangement
-      :CoverageEligibilityRequest.insurance.coverage
-      :CoverageEligibilityRequest.insurance.focal
-      :CoverageEligibilityRequest.insurance.id
-      :CoverageEligibilityRequest.insurer
-      :CoverageEligibilityRequest.item
-      :CoverageEligibilityRequest.item.category
-      :CoverageEligibilityRequest.item.detail
-      :CoverageEligibilityRequest.item.diagnosis
-      :CoverageEligibilityRequest.item.diagnosis.diagnosis.CodeableConcept
-      :CoverageEligibilityRequest.item.diagnosis.diagnosis.Reference
-      :CoverageEligibilityRequest.item.diagnosis.id
-      :CoverageEligibilityRequest.item.facility
-      :CoverageEligibilityRequest.item.id
-      :CoverageEligibilityRequest.item.modifier
-      :CoverageEligibilityRequest.item.productOrService
-      :CoverageEligibilityRequest.item.provider
-      :CoverageEligibilityRequest.item.quantity
-      :CoverageEligibilityRequest.item.supportingInfoSequence
-      :CoverageEligibilityRequest.item.unitPrice
-      :CoverageEligibilityRequest.language
-      :CoverageEligibilityRequest.meta
-      :CoverageEligibilityRequest.overageEligibilityRequest.item.diagnosis.diagnosis
-      :CoverageEligibilityRequest.overageEligibilityRequest.serviced
-      :CoverageEligibilityRequest.patient
-      :CoverageEligibilityRequest.priority
-      :CoverageEligibilityRequest.provider
-      :CoverageEligibilityRequest.purpose
-      :CoverageEligibilityRequest.serviced.Period
-      :CoverageEligibilityRequest.serviced.date
-      :CoverageEligibilityRequest.status
-      :CoverageEligibilityRequest.supportingInfo
-      :CoverageEligibilityRequest.supportingInfo.appliesToAll
-      :CoverageEligibilityRequest.supportingInfo.id
-      :CoverageEligibilityRequest.supportingInfo.information
-      :CoverageEligibilityRequest.supportingInfo.sequence
-      :CoverageEligibilityRequest.text
-      :CoverageEligibilityResponse.contained
-      :CoverageEligibilityResponse.created
-      :CoverageEligibilityResponse.disposition
-      :CoverageEligibilityResponse.error
-      :CoverageEligibilityResponse.error.code
-      :CoverageEligibilityResponse.error.id
-      :CoverageEligibilityResponse.form
-      :CoverageEligibilityResponse.id
-      :CoverageEligibilityResponse.identifier
-      :CoverageEligibilityResponse.implicitRules
-      :CoverageEligibilityResponse.insurance
-      :CoverageEligibilityResponse.insurance.benefitPeriod
-      :CoverageEligibilityResponse.insurance.coverage
-      :CoverageEligibilityResponse.insurance.id
-      :CoverageEligibilityResponse.insurance.inforce
-      :CoverageEligibilityResponse.insurance.item
-      :CoverageEligibilityResponse.insurance.item.authorizationRequired
-      :CoverageEligibilityResponse.insurance.item.authorizationSupporting
-      :CoverageEligibilityResponse.insurance.item.authorizationUrl
-      :CoverageEligibilityResponse.insurance.item.benefit
-      :CoverageEligibilityResponse.insurance.item.benefit.allowed.Money
-      :CoverageEligibilityResponse.insurance.item.benefit.allowed.string
-      :CoverageEligibilityResponse.insurance.item.benefit.allowed.unsignedInt
-      :CoverageEligibilityResponse.insurance.item.benefit.id
-      :CoverageEligibilityResponse.insurance.item.benefit.type
-      :CoverageEligibilityResponse.insurance.item.benefit.used.Money
-      :CoverageEligibilityResponse.insurance.item.benefit.used.string
-      :CoverageEligibilityResponse.insurance.item.benefit.used.unsignedInt
-      :CoverageEligibilityResponse.insurance.item.category
-      :CoverageEligibilityResponse.insurance.item.description
-      :CoverageEligibilityResponse.insurance.item.excluded
-      :CoverageEligibilityResponse.insurance.item.id
-      :CoverageEligibilityResponse.insurance.item.modifier
-      :CoverageEligibilityResponse.insurance.item.name
-      :CoverageEligibilityResponse.insurance.item.network
-      :CoverageEligibilityResponse.insurance.item.productOrService
-      :CoverageEligibilityResponse.insurance.item.provider
-      :CoverageEligibilityResponse.insurance.item.term
-      :CoverageEligibilityResponse.insurance.item.unit
-      :CoverageEligibilityResponse.insurer
-      :CoverageEligibilityResponse.language
-      :CoverageEligibilityResponse.meta
-      :CoverageEligibilityResponse.outcome
-      :CoverageEligibilityResponse.overageEligibilityResponse.insurance.item.benefit.allowed
-      :CoverageEligibilityResponse.overageEligibilityResponse.insurance.item.benefit.used
-      :CoverageEligibilityResponse.overageEligibilityResponse.serviced
-      :CoverageEligibilityResponse.patient
-      :CoverageEligibilityResponse.preAuthRef
-      :CoverageEligibilityResponse.purpose
-      :CoverageEligibilityResponse.request
-      :CoverageEligibilityResponse.requestor
-      :CoverageEligibilityResponse.serviced.Period
-      :CoverageEligibilityResponse.serviced.date
-      :CoverageEligibilityResponse.status
-      :CoverageEligibilityResponse.text)},
+      :Coverage.subrogation)},
     :deleted
     {:count 15,
      :fields
@@ -2101,7 +1914,7 @@
       :ClaimResponse.text)}},
    :ChargeItem
    {:added
-    {:count 51,
+    {:count 10,
      :fields
      (:ChargeItem.costCenter
       :ChargeItem.definitionCanonical
@@ -2112,48 +1925,7 @@
       :ChargeItem.performer.function
       :ChargeItem.performer.id
       :ChargeItem.product.CodeableConcept
-      :ChargeItem.product.Reference
-      :ChargeItemDefinition.applicability
-      :ChargeItemDefinition.applicability.description
-      :ChargeItemDefinition.applicability.expression
-      :ChargeItemDefinition.applicability.id
-      :ChargeItemDefinition.applicability.language
-      :ChargeItemDefinition.approvalDate
-      :ChargeItemDefinition.code
-      :ChargeItemDefinition.contact
-      :ChargeItemDefinition.contained
-      :ChargeItemDefinition.copyright
-      :ChargeItemDefinition.date
-      :ChargeItemDefinition.derivedFromUri
-      :ChargeItemDefinition.description
-      :ChargeItemDefinition.effectivePeriod
-      :ChargeItemDefinition.experimental
-      :ChargeItemDefinition.id
-      :ChargeItemDefinition.identifier
-      :ChargeItemDefinition.implicitRules
-      :ChargeItemDefinition.instance
-      :ChargeItemDefinition.jurisdiction
-      :ChargeItemDefinition.language
-      :ChargeItemDefinition.lastReviewDate
-      :ChargeItemDefinition.meta
-      :ChargeItemDefinition.partOf
-      :ChargeItemDefinition.propertyGroup
-      :ChargeItemDefinition.propertyGroup.applicability
-      :ChargeItemDefinition.propertyGroup.id
-      :ChargeItemDefinition.propertyGroup.priceComponent
-      :ChargeItemDefinition.propertyGroup.priceComponent.amount
-      :ChargeItemDefinition.propertyGroup.priceComponent.code
-      :ChargeItemDefinition.propertyGroup.priceComponent.factor
-      :ChargeItemDefinition.propertyGroup.priceComponent.id
-      :ChargeItemDefinition.propertyGroup.priceComponent.type
-      :ChargeItemDefinition.publisher
-      :ChargeItemDefinition.replaces
-      :ChargeItemDefinition.status
-      :ChargeItemDefinition.text
-      :ChargeItemDefinition.title
-      :ChargeItemDefinition.url
-      :ChargeItemDefinition.useContext
-      :ChargeItemDefinition.version)},
+      :ChargeItem.product.Reference)},
     :deleted
     {:count 5,
      :fields
@@ -2974,54 +2746,13 @@
       :ActivityDefinition.version)}},
    :Specimen
    {:added
-    {:count 46,
+    {:count 5,
      :fields
      (:Specimen.collection.duration
       :Specimen.collection.fastingStatus.CodeableConcept
       :Specimen.collection.fastingStatus.Duration
       :Specimen.condition
-      :Specimen.pecimen.collection.fastingStatus
-      :SpecimenDefinition.collection
-      :SpecimenDefinition.contained
-      :SpecimenDefinition.id
-      :SpecimenDefinition.identifier
-      :SpecimenDefinition.implicitRules
-      :SpecimenDefinition.language
-      :SpecimenDefinition.meta
-      :SpecimenDefinition.patientPreparation
-      :SpecimenDefinition.pecimenDefinition.typeTested.container.additive.additive
-      :SpecimenDefinition.pecimenDefinition.typeTested.container.minimumVolume
-      :SpecimenDefinition.text
-      :SpecimenDefinition.timeAspect
-      :SpecimenDefinition.typeCollected
-      :SpecimenDefinition.typeTested
-      :SpecimenDefinition.typeTested.container
-      :SpecimenDefinition.typeTested.container.additive
-      :SpecimenDefinition.typeTested.container.additive.additive.CodeableConcept
-      :SpecimenDefinition.typeTested.container.additive.additive.Reference
-      :SpecimenDefinition.typeTested.container.additive.id
-      :SpecimenDefinition.typeTested.container.cap
-      :SpecimenDefinition.typeTested.container.capacity
-      :SpecimenDefinition.typeTested.container.description
-      :SpecimenDefinition.typeTested.container.id
-      :SpecimenDefinition.typeTested.container.material
-      :SpecimenDefinition.typeTested.container.minimumVolume.Quantity
-      :SpecimenDefinition.typeTested.container.minimumVolume.string
-      :SpecimenDefinition.typeTested.container.preparation
-      :SpecimenDefinition.typeTested.container.type
-      :SpecimenDefinition.typeTested.handling
-      :SpecimenDefinition.typeTested.handling.id
-      :SpecimenDefinition.typeTested.handling.instruction
-      :SpecimenDefinition.typeTested.handling.maxDuration
-      :SpecimenDefinition.typeTested.handling.temperatureQualifier
-      :SpecimenDefinition.typeTested.handling.temperatureRange
-      :SpecimenDefinition.typeTested.id
-      :SpecimenDefinition.typeTested.isDerived
-      :SpecimenDefinition.typeTested.preference
-      :SpecimenDefinition.typeTested.rejectionCriterion
-      :SpecimenDefinition.typeTested.requirement
-      :SpecimenDefinition.typeTested.retentionTime
-      :SpecimenDefinition.typeTested.type)},
+      :Specimen.pecimen.collection.fastingStatus)},
     :deleted {:count 0, :fields ()},
     :shared
     {:count 42,
@@ -3270,7 +3001,7 @@
    {:added {:count 0, :fields ()},
     :deleted {:count 0, :fields ()},
     :shared
-    {:count 49,
+    {:count 21,
      :fields
      (:Practitioner.active
       :Practitioner.address
@@ -3292,35 +3023,7 @@
       :Practitioner.qualification.issuer
       :Practitioner.qualification.period
       :Practitioner.telecom
-      :Practitioner.text
-      :PractitionerRole.active
-      :PractitionerRole.availabilityExceptions
-      :PractitionerRole.availableTime
-      :PractitionerRole.availableTime.allDay
-      :PractitionerRole.availableTime.availableEndTime
-      :PractitionerRole.availableTime.availableStartTime
-      :PractitionerRole.availableTime.daysOfWeek
-      :PractitionerRole.availableTime.id
-      :PractitionerRole.code
-      :PractitionerRole.contained
-      :PractitionerRole.endpoint
-      :PractitionerRole.healthcareService
-      :PractitionerRole.id
-      :PractitionerRole.identifier
-      :PractitionerRole.implicitRules
-      :PractitionerRole.language
-      :PractitionerRole.location
-      :PractitionerRole.meta
-      :PractitionerRole.notAvailable
-      :PractitionerRole.notAvailable.description
-      :PractitionerRole.notAvailable.during
-      :PractitionerRole.notAvailable.id
-      :PractitionerRole.organization
-      :PractitionerRole.period
-      :PractitionerRole.practitioner
-      :PractitionerRole.specialty
-      :PractitionerRole.telecom
-      :PractitionerRole.text)}},
+      :Practitioner.text)}},
    :Flag
    {:added {:count 0, :fields ()},
     :deleted {:count 0, :fields ()},
@@ -3672,7 +3375,7 @@
       :OperationOutcome.text)}},
    :Immunization
    {:added
-    {:count 67,
+    {:count 32,
      :fields
      (:Immunization.education
       :Immunization.education.documentType
@@ -3705,44 +3408,9 @@
       :Immunization.reasonReference
       :Immunization.recorded
       :Immunization.statusReason
-      :Immunization.subpotentReason
-      :ImmunizationEvaluation.authority
-      :ImmunizationEvaluation.contained
-      :ImmunizationEvaluation.date
-      :ImmunizationEvaluation.description
-      :ImmunizationEvaluation.doseNumber.positiveInt
-      :ImmunizationEvaluation.doseNumber.string
-      :ImmunizationEvaluation.doseStatus
-      :ImmunizationEvaluation.doseStatusReason
-      :ImmunizationEvaluation.id
-      :ImmunizationEvaluation.identifier
-      :ImmunizationEvaluation.immunizationEvent
-      :ImmunizationEvaluation.implicitRules
-      :ImmunizationEvaluation.language
-      :ImmunizationEvaluation.meta
-      :ImmunizationEvaluation.mmunizationEvaluation.doseNumber
-      :ImmunizationEvaluation.mmunizationEvaluation.seriesDoses
-      :ImmunizationEvaluation.patient
-      :ImmunizationEvaluation.series
-      :ImmunizationEvaluation.seriesDoses.positiveInt
-      :ImmunizationEvaluation.seriesDoses.string
-      :ImmunizationEvaluation.status
-      :ImmunizationEvaluation.targetDisease
-      :ImmunizationEvaluation.text
-      :ImmunizationRecommendation.authority
-      :ImmunizationRecommendation.date
-      :ImmunizationRecommendation.mmunizationRecommendation.recommendation.doseNumber
-      :ImmunizationRecommendation.mmunizationRecommendation.recommendation.seriesDoses
-      :ImmunizationRecommendation.recommendation.contraindicatedVaccineCode
-      :ImmunizationRecommendation.recommendation.description
-      :ImmunizationRecommendation.recommendation.doseNumber.positiveInt
-      :ImmunizationRecommendation.recommendation.doseNumber.string
-      :ImmunizationRecommendation.recommendation.forecastReason
-      :ImmunizationRecommendation.recommendation.series
-      :ImmunizationRecommendation.recommendation.seriesDoses.positiveInt
-      :ImmunizationRecommendation.recommendation.seriesDoses.string)},
+      :Immunization.subpotentReason)},
     :deleted
-    {:count 28,
+    {:count 20,
      :fields
      (:Immunization.date
       :Immunization.explanation
@@ -3763,17 +3431,9 @@
       :Immunization.vaccinationProtocol.id
       :Immunization.vaccinationProtocol.series
       :Immunization.vaccinationProtocol.seriesDoses
-      :Immunization.vaccinationProtocol.targetDisease
-      :ImmunizationRecommendation.recommendation.date
-      :ImmunizationRecommendation.recommendation.doseNumber
-      :ImmunizationRecommendation.recommendation.protocol
-      :ImmunizationRecommendation.recommendation.protocol.authority
-      :ImmunizationRecommendation.recommendation.protocol.description
-      :ImmunizationRecommendation.recommendation.protocol.doseSequence
-      :ImmunizationRecommendation.recommendation.protocol.id
-      :ImmunizationRecommendation.recommendation.protocol.series)},
+      :Immunization.vaccinationProtocol.targetDisease)},
     :shared
-    {:count 45,
+    {:count 26,
      :fields
      (:Immunization.contained
       :Immunization.doseQuantity
@@ -3800,26 +3460,7 @@
       :Immunization.site
       :Immunization.status
       :Immunization.text
-      :Immunization.vaccineCode
-      :ImmunizationRecommendation.contained
-      :ImmunizationRecommendation.id
-      :ImmunizationRecommendation.identifier
-      :ImmunizationRecommendation.implicitRules
-      :ImmunizationRecommendation.language
-      :ImmunizationRecommendation.meta
-      :ImmunizationRecommendation.patient
-      :ImmunizationRecommendation.recommendation
-      :ImmunizationRecommendation.recommendation.dateCriterion
-      :ImmunizationRecommendation.recommendation.dateCriterion.code
-      :ImmunizationRecommendation.recommendation.dateCriterion.id
-      :ImmunizationRecommendation.recommendation.dateCriterion.value
-      :ImmunizationRecommendation.recommendation.forecastStatus
-      :ImmunizationRecommendation.recommendation.id
-      :ImmunizationRecommendation.recommendation.supportingImmunization
-      :ImmunizationRecommendation.recommendation.supportingPatientInformation
-      :ImmunizationRecommendation.recommendation.targetDisease
-      :ImmunizationRecommendation.recommendation.vaccineCode
-      :ImmunizationRecommendation.text)}},
+      :Immunization.vaccineCode)}},
    :ResearchSubject
    {:added {:count 0, :fields ()},
     :deleted {:count 0, :fields ()},
@@ -4026,7 +3667,7 @@
       :NutritionOrder.utritionOrder.enteralFormula.administration.rate)}},
    :Questionnaire
    {:added
-    {:count 31,
+    {:count 29,
      :fields
      (:Questionnaire.derivedFrom
       :Questionnaire.item.answerOption
@@ -4056,11 +3697,9 @@
       :Questionnaire.item.initial.value.time
       :Questionnaire.item.initial.value.uri
       :Questionnaire.uestionnaire.item.answerOption.value
-      :Questionnaire.uestionnaire.item.initial.value
-      :QuestionnaireResponse.encounter
-      :QuestionnaireResponse.partOf)},
+      :Questionnaire.uestionnaire.item.initial.value)},
     :deleted
-    {:count 28,
+    {:count 25,
      :fields
      (:Questionnaire.item.enableWhen.answer.Attachment
       :Questionnaire.item.enableWhen.answer.uri
@@ -4086,12 +3725,9 @@
       :Questionnaire.item.option.value.time
       :Questionnaire.item.options
       :Questionnaire.uestionnaire.item.initial
-      :Questionnaire.uestionnaire.item.option.value
-      :QuestionnaireResponse.context
-      :QuestionnaireResponse.item.subject
-      :QuestionnaireResponse.parent)},
+      :Questionnaire.uestionnaire.item.option.value)},
     :shared
-    {:count 89,
+    {:count 53,
      :fields
      (:Questionnaire.approvalDate
       :Questionnaire.code
@@ -4145,43 +3781,7 @@
       :Questionnaire.uestionnaire.item.enableWhen.answer
       :Questionnaire.url
       :Questionnaire.useContext
-      :Questionnaire.version
-      :QuestionnaireResponse.author
-      :QuestionnaireResponse.authored
-      :QuestionnaireResponse.basedOn
-      :QuestionnaireResponse.contained
-      :QuestionnaireResponse.id
-      :QuestionnaireResponse.identifier
-      :QuestionnaireResponse.implicitRules
-      :QuestionnaireResponse.item
-      :QuestionnaireResponse.item.answer
-      :QuestionnaireResponse.item.answer.id
-      :QuestionnaireResponse.item.answer.item
-      :QuestionnaireResponse.item.answer.value.Attachment
-      :QuestionnaireResponse.item.answer.value.Coding
-      :QuestionnaireResponse.item.answer.value.Quantity
-      :QuestionnaireResponse.item.answer.value.Reference
-      :QuestionnaireResponse.item.answer.value.boolean
-      :QuestionnaireResponse.item.answer.value.date
-      :QuestionnaireResponse.item.answer.value.dateTime
-      :QuestionnaireResponse.item.answer.value.decimal
-      :QuestionnaireResponse.item.answer.value.integer
-      :QuestionnaireResponse.item.answer.value.string
-      :QuestionnaireResponse.item.answer.value.time
-      :QuestionnaireResponse.item.answer.value.uri
-      :QuestionnaireResponse.item.definition
-      :QuestionnaireResponse.item.id
-      :QuestionnaireResponse.item.item
-      :QuestionnaireResponse.item.linkId
-      :QuestionnaireResponse.item.text
-      :QuestionnaireResponse.language
-      :QuestionnaireResponse.meta
-      :QuestionnaireResponse.questionnaire
-      :QuestionnaireResponse.source
-      :QuestionnaireResponse.status
-      :QuestionnaireResponse.subject
-      :QuestionnaireResponse.text
-      :QuestionnaireResponse.uestionnaireResponse.item.answer.value)}},
+      :Questionnaire.version)}},
    :Account
    {:added
     {:count 2, :fields (:Account.partOf :Account.servicePeriod)},
@@ -4542,7 +4142,7 @@
       :ValueSet.version)}},
    :Claim
    {:added
-    {:count 79,
+    {:count 26,
      :fields
      (:Claim.diagnosis.onAdmission
       :Claim.insurance.identifier
@@ -4569,62 +4169,9 @@
       :Claim.supportingInfo.value.Quantity
       :Claim.supportingInfo.value.Reference
       :Claim.supportingInfo.value.boolean
-      :Claim.supportingInfo.value.string
-      :ClaimResponse.addItem.bodySite
-      :ClaimResponse.addItem.detail.factor
-      :ClaimResponse.addItem.detail.net
-      :ClaimResponse.addItem.detail.productOrService
-      :ClaimResponse.addItem.detail.quantity
-      :ClaimResponse.addItem.detail.subDetail
-      :ClaimResponse.addItem.detail.subDetail.adjudication
-      :ClaimResponse.addItem.detail.subDetail.factor
-      :ClaimResponse.addItem.detail.subDetail.id
-      :ClaimResponse.addItem.detail.subDetail.modifier
-      :ClaimResponse.addItem.detail.subDetail.net
-      :ClaimResponse.addItem.detail.subDetail.noteNumber
-      :ClaimResponse.addItem.detail.subDetail.productOrService
-      :ClaimResponse.addItem.detail.subDetail.quantity
-      :ClaimResponse.addItem.detail.subDetail.unitPrice
-      :ClaimResponse.addItem.detail.unitPrice
-      :ClaimResponse.addItem.detailSequence
-      :ClaimResponse.addItem.factor
-      :ClaimResponse.addItem.itemSequence
-      :ClaimResponse.addItem.location.Address
-      :ClaimResponse.addItem.location.CodeableConcept
-      :ClaimResponse.addItem.location.Reference
-      :ClaimResponse.addItem.net
-      :ClaimResponse.addItem.productOrService
-      :ClaimResponse.addItem.programCode
-      :ClaimResponse.addItem.provider
-      :ClaimResponse.addItem.quantity
-      :ClaimResponse.addItem.serviced.Period
-      :ClaimResponse.addItem.serviced.date
-      :ClaimResponse.addItem.subSite
-      :ClaimResponse.addItem.subdetailSequence
-      :ClaimResponse.addItem.unitPrice
-      :ClaimResponse.adjudication
-      :ClaimResponse.error.detailSequence
-      :ClaimResponse.error.itemSequence
-      :ClaimResponse.error.subDetailSequence
-      :ClaimResponse.formCode
-      :ClaimResponse.fundsReserve
-      :ClaimResponse.item.detail.detailSequence
-      :ClaimResponse.item.detail.subDetail.subDetailSequence
-      :ClaimResponse.item.itemSequence
-      :ClaimResponse.laimResponse.addItem.location
-      :ClaimResponse.laimResponse.addItem.serviced
-      :ClaimResponse.preAuthPeriod
-      :ClaimResponse.preAuthRef
-      :ClaimResponse.requestor
-      :ClaimResponse.subType
-      :ClaimResponse.total
-      :ClaimResponse.total.amount
-      :ClaimResponse.total.category
-      :ClaimResponse.total.id
-      :ClaimResponse.type
-      :ClaimResponse.use)},
+      :Claim.supportingInfo.value.string)},
     :deleted
-    {:count 47,
+    {:count 25,
      :fields
      (:Claim.employmentImpacted
       :Claim.hospitalization
@@ -4650,31 +4197,9 @@
       :Claim.laim.information.timing
       :Claim.laim.information.value
       :Claim.organization
-      :Claim.payee.resourceType
-      :ClaimResponse.addItem.category
-      :ClaimResponse.addItem.detail.category
-      :ClaimResponse.addItem.detail.fee
-      :ClaimResponse.addItem.detail.revenue
-      :ClaimResponse.addItem.detail.service
-      :ClaimResponse.addItem.fee
-      :ClaimResponse.addItem.revenue
-      :ClaimResponse.addItem.sequenceLinkId
-      :ClaimResponse.addItem.service
-      :ClaimResponse.error.detailSequenceLinkId
-      :ClaimResponse.error.sequenceLinkId
-      :ClaimResponse.error.subdetailSequenceLinkId
-      :ClaimResponse.insurance.preAuthRef
-      :ClaimResponse.item.detail.sequenceLinkId
-      :ClaimResponse.item.detail.subDetail.sequenceLinkId
-      :ClaimResponse.item.sequenceLinkId
-      :ClaimResponse.requestOrganization
-      :ClaimResponse.requestProvider
-      :ClaimResponse.reserved
-      :ClaimResponse.totalBenefit
-      :ClaimResponse.totalCost
-      :ClaimResponse.unallocDeductable)},
+      :Claim.payee.resourceType)},
     :shared
-    {:count 184,
+    {:count 116,
      :fields
      (:Claim.accident
       :Claim.accident.date
@@ -4791,75 +4316,7 @@
       :Claim.text
       :Claim.total
       :Claim.type
-      :Claim.use
-      :ClaimResponse.addItem
-      :ClaimResponse.addItem.adjudication
-      :ClaimResponse.addItem.detail
-      :ClaimResponse.addItem.detail.adjudication
-      :ClaimResponse.addItem.detail.id
-      :ClaimResponse.addItem.detail.modifier
-      :ClaimResponse.addItem.detail.noteNumber
-      :ClaimResponse.addItem.id
-      :ClaimResponse.addItem.modifier
-      :ClaimResponse.addItem.noteNumber
-      :ClaimResponse.communicationRequest
-      :ClaimResponse.contained
-      :ClaimResponse.created
-      :ClaimResponse.disposition
-      :ClaimResponse.error
-      :ClaimResponse.error.code
-      :ClaimResponse.error.id
-      :ClaimResponse.form
-      :ClaimResponse.id
-      :ClaimResponse.identifier
-      :ClaimResponse.implicitRules
-      :ClaimResponse.insurance
-      :ClaimResponse.insurance.businessArrangement
-      :ClaimResponse.insurance.claimResponse
-      :ClaimResponse.insurance.coverage
-      :ClaimResponse.insurance.focal
-      :ClaimResponse.insurance.id
-      :ClaimResponse.insurance.sequence
-      :ClaimResponse.insurer
-      :ClaimResponse.item
-      :ClaimResponse.item.adjudication
-      :ClaimResponse.item.adjudication.amount
-      :ClaimResponse.item.adjudication.category
-      :ClaimResponse.item.adjudication.id
-      :ClaimResponse.item.adjudication.reason
-      :ClaimResponse.item.adjudication.value
-      :ClaimResponse.item.detail
-      :ClaimResponse.item.detail.adjudication
-      :ClaimResponse.item.detail.id
-      :ClaimResponse.item.detail.noteNumber
-      :ClaimResponse.item.detail.subDetail
-      :ClaimResponse.item.detail.subDetail.adjudication
-      :ClaimResponse.item.detail.subDetail.id
-      :ClaimResponse.item.detail.subDetail.noteNumber
-      :ClaimResponse.item.id
-      :ClaimResponse.item.noteNumber
-      :ClaimResponse.language
-      :ClaimResponse.meta
-      :ClaimResponse.outcome
-      :ClaimResponse.patient
-      :ClaimResponse.payeeType
-      :ClaimResponse.payment
-      :ClaimResponse.payment.adjustment
-      :ClaimResponse.payment.adjustmentReason
-      :ClaimResponse.payment.amount
-      :ClaimResponse.payment.date
-      :ClaimResponse.payment.id
-      :ClaimResponse.payment.identifier
-      :ClaimResponse.payment.type
-      :ClaimResponse.processNote
-      :ClaimResponse.processNote.id
-      :ClaimResponse.processNote.language
-      :ClaimResponse.processNote.number
-      :ClaimResponse.processNote.text
-      :ClaimResponse.processNote.type
-      :ClaimResponse.request
-      :ClaimResponse.status
-      :ClaimResponse.text)}},
+      :Claim.use)}},
    :ResearchStudy
    {:added
     {:count 9,
@@ -4983,7 +4440,7 @@
       :MedicationRequest.text)}},
    :Measure
    {:added
-    {:count 30,
+    {:count 18,
      :fields
      (:Measure.author
       :Measure.easure.subject
@@ -5002,21 +4459,9 @@
       :Measure.subject.Reference
       :Measure.subtitle
       :Measure.supplementalData.code
-      :Measure.supplementalData.description
-      :MeasureReport.evaluatedResource
-      :MeasureReport.group.code
-      :MeasureReport.group.population.subjectResults
-      :MeasureReport.group.stratifier.code
-      :MeasureReport.group.stratifier.stratum.component
-      :MeasureReport.group.stratifier.stratum.component.code
-      :MeasureReport.group.stratifier.stratum.component.id
-      :MeasureReport.group.stratifier.stratum.component.value
-      :MeasureReport.group.stratifier.stratum.population.subjectResults
-      :MeasureReport.improvementNotation
-      :MeasureReport.reporter
-      :MeasureReport.subject)},
+      :Measure.supplementalData.description)},
     :deleted
-    {:count 19,
+    {:count 10,
      :fields
      (:Measure.contributor
       :Measure.group.identifier
@@ -5027,18 +4472,9 @@
       :Measure.group.stratifier.path
       :Measure.set
       :Measure.supplementalData.identifier
-      :Measure.supplementalData.path
-      :MeasureReport.evaluatedResources
-      :MeasureReport.group.identifier
-      :MeasureReport.group.population.identifier
-      :MeasureReport.group.population.patients
-      :MeasureReport.group.stratifier.identifier
-      :MeasureReport.group.stratifier.stratum.population.identifier
-      :MeasureReport.group.stratifier.stratum.population.patients
-      :MeasureReport.patient
-      :MeasureReport.reportingOrganization)},
+      :Measure.supplementalData.path)},
     :shared
-    {:count 83,
+    {:count 54,
      :fields
      (:Measure.approvalDate
       :Measure.clinicalRecommendationStatement
@@ -5093,36 +4529,7 @@
       :Measure.url
       :Measure.usage
       :Measure.useContext
-      :Measure.version
-      :MeasureReport.contained
-      :MeasureReport.date
-      :MeasureReport.group
-      :MeasureReport.group.id
-      :MeasureReport.group.measureScore
-      :MeasureReport.group.population
-      :MeasureReport.group.population.code
-      :MeasureReport.group.population.count
-      :MeasureReport.group.population.id
-      :MeasureReport.group.stratifier
-      :MeasureReport.group.stratifier.id
-      :MeasureReport.group.stratifier.stratum
-      :MeasureReport.group.stratifier.stratum.id
-      :MeasureReport.group.stratifier.stratum.measureScore
-      :MeasureReport.group.stratifier.stratum.population
-      :MeasureReport.group.stratifier.stratum.population.code
-      :MeasureReport.group.stratifier.stratum.population.count
-      :MeasureReport.group.stratifier.stratum.population.id
-      :MeasureReport.group.stratifier.stratum.value
-      :MeasureReport.id
-      :MeasureReport.identifier
-      :MeasureReport.implicitRules
-      :MeasureReport.language
-      :MeasureReport.measure
-      :MeasureReport.meta
-      :MeasureReport.period
-      :MeasureReport.status
-      :MeasureReport.text
-      :MeasureReport.type)}},
+      :Measure.version)}},
    :List
    {:added {:count 0, :fields ()},
     :deleted {:count 0, :fields ()},
@@ -5546,7 +4953,7 @@
       :RelatedPerson.text)}},
    :Medication
    {:added
-    {:count 128,
+    {:count 7,
      :fields
      (:Medication.amount
       :Medication.batch
@@ -5554,130 +4961,9 @@
       :Medication.batch.id
       :Medication.batch.lotNumber
       :Medication.identifier
-      :Medication.ingredient.strength
-      :MedicationAdministration.instantiates
-      :MedicationAdministration.performer.function
-      :MedicationAdministration.request
-      :MedicationAdministration.statusReason
-      :MedicationDispense.edicationDispense.statusReason
-      :MedicationDispense.location
-      :MedicationDispense.performer.function
-      :MedicationDispense.statusReason.CodeableConcept
-      :MedicationDispense.statusReason.Reference
-      :MedicationKnowledge.administrationGuidelines
-      :MedicationKnowledge.administrationGuidelines.dosage
-      :MedicationKnowledge.administrationGuidelines.dosage.dosage
-      :MedicationKnowledge.administrationGuidelines.dosage.id
-      :MedicationKnowledge.administrationGuidelines.dosage.type
-      :MedicationKnowledge.administrationGuidelines.id
-      :MedicationKnowledge.administrationGuidelines.indication.CodeableConcept
-      :MedicationKnowledge.administrationGuidelines.indication.Reference
-      :MedicationKnowledge.administrationGuidelines.patientCharacteristics
-      :MedicationKnowledge.administrationGuidelines.patientCharacteristics.characteristic.CodeableConcept
-      :MedicationKnowledge.administrationGuidelines.patientCharacteristics.characteristic.Quantity
-      :MedicationKnowledge.administrationGuidelines.patientCharacteristics.id
-      :MedicationKnowledge.administrationGuidelines.patientCharacteristics.value
-      :MedicationKnowledge.amount
-      :MedicationKnowledge.associatedMedication
-      :MedicationKnowledge.code
-      :MedicationKnowledge.contained
-      :MedicationKnowledge.contraindication
-      :MedicationKnowledge.cost
-      :MedicationKnowledge.cost.cost
-      :MedicationKnowledge.cost.id
-      :MedicationKnowledge.cost.source
-      :MedicationKnowledge.cost.type
-      :MedicationKnowledge.doseForm
-      :MedicationKnowledge.drugCharacteristic
-      :MedicationKnowledge.drugCharacteristic.id
-      :MedicationKnowledge.drugCharacteristic.type
-      :MedicationKnowledge.drugCharacteristic.value.CodeableConcept
-      :MedicationKnowledge.drugCharacteristic.value.Quantity
-      :MedicationKnowledge.drugCharacteristic.value.base64Binary
-      :MedicationKnowledge.drugCharacteristic.value.string
-      :MedicationKnowledge.edicationKnowledge.administrationGuidelines.indication
-      :MedicationKnowledge.edicationKnowledge.administrationGuidelines.patientCharacteristics.characteristic
-      :MedicationKnowledge.edicationKnowledge.drugCharacteristic.value
-      :MedicationKnowledge.edicationKnowledge.ingredient.item
-      :MedicationKnowledge.id
-      :MedicationKnowledge.implicitRules
-      :MedicationKnowledge.ingredient
-      :MedicationKnowledge.ingredient.id
-      :MedicationKnowledge.ingredient.isActive
-      :MedicationKnowledge.ingredient.item.CodeableConcept
-      :MedicationKnowledge.ingredient.item.Reference
-      :MedicationKnowledge.ingredient.strength
-      :MedicationKnowledge.intendedRoute
-      :MedicationKnowledge.kinetics
-      :MedicationKnowledge.kinetics.areaUnderCurve
-      :MedicationKnowledge.kinetics.halfLifePeriod
-      :MedicationKnowledge.kinetics.id
-      :MedicationKnowledge.kinetics.lethalDose50
-      :MedicationKnowledge.language
-      :MedicationKnowledge.manufacturer
-      :MedicationKnowledge.medicineClassification
-      :MedicationKnowledge.medicineClassification.classification
-      :MedicationKnowledge.medicineClassification.id
-      :MedicationKnowledge.medicineClassification.type
-      :MedicationKnowledge.meta
-      :MedicationKnowledge.monitoringProgram
-      :MedicationKnowledge.monitoringProgram.id
-      :MedicationKnowledge.monitoringProgram.name
-      :MedicationKnowledge.monitoringProgram.type
-      :MedicationKnowledge.monograph
-      :MedicationKnowledge.monograph.id
-      :MedicationKnowledge.monograph.source
-      :MedicationKnowledge.monograph.type
-      :MedicationKnowledge.packaging
-      :MedicationKnowledge.packaging.id
-      :MedicationKnowledge.packaging.quantity
-      :MedicationKnowledge.packaging.type
-      :MedicationKnowledge.preparationInstruction
-      :MedicationKnowledge.productType
-      :MedicationKnowledge.regulatory
-      :MedicationKnowledge.regulatory.id
-      :MedicationKnowledge.regulatory.maxDispense
-      :MedicationKnowledge.regulatory.maxDispense.id
-      :MedicationKnowledge.regulatory.maxDispense.period
-      :MedicationKnowledge.regulatory.maxDispense.quantity
-      :MedicationKnowledge.regulatory.regulatoryAuthority
-      :MedicationKnowledge.regulatory.schedule
-      :MedicationKnowledge.regulatory.schedule.id
-      :MedicationKnowledge.regulatory.schedule.schedule
-      :MedicationKnowledge.regulatory.substitution
-      :MedicationKnowledge.regulatory.substitution.allowed
-      :MedicationKnowledge.regulatory.substitution.id
-      :MedicationKnowledge.regulatory.substitution.type
-      :MedicationKnowledge.relatedMedicationKnowledge
-      :MedicationKnowledge.relatedMedicationKnowledge.id
-      :MedicationKnowledge.relatedMedicationKnowledge.reference
-      :MedicationKnowledge.relatedMedicationKnowledge.type
-      :MedicationKnowledge.status
-      :MedicationKnowledge.synonym
-      :MedicationKnowledge.text
-      :MedicationRequest.courseOfTherapyType
-      :MedicationRequest.dispenseRequest.dispenseInterval
-      :MedicationRequest.dispenseRequest.initialFill
-      :MedicationRequest.dispenseRequest.initialFill.duration
-      :MedicationRequest.dispenseRequest.initialFill.id
-      :MedicationRequest.dispenseRequest.initialFill.quantity
-      :MedicationRequest.doNotPerform
-      :MedicationRequest.edicationRequest.reported
-      :MedicationRequest.edicationRequest.substitution.allowed
-      :MedicationRequest.encounter
-      :MedicationRequest.instantiatesCanonical
-      :MedicationRequest.instantiatesUri
-      :MedicationRequest.insurance
-      :MedicationRequest.performer
-      :MedicationRequest.performerType
-      :MedicationRequest.reported.Reference
-      :MedicationRequest.reported.boolean
-      :MedicationRequest.statusReason
-      :MedicationRequest.substitution.allowed.CodeableConcept
-      :MedicationRequest.substitution.allowed.boolean
-      :MedicationStatement.statusReason)},
+      :Medication.ingredient.strength)},
     :deleted
-    {:count 35,
+    {:count 17,
      :fields
      (:Medication.edication.package.content.item
       :Medication.image
@@ -5695,27 +4981,9 @@
       :Medication.package.content.id
       :Medication.package.content.item.CodeableConcept
       :Medication.package.content.item.Reference
-      :Medication.package.id
-      :MedicationAdministration.definition
-      :MedicationAdministration.notGiven
-      :MedicationAdministration.performer.onBehalfOf
-      :MedicationAdministration.prescription
-      :MedicationAdministration.reasonNotGiven
-      :MedicationDispense.edicationDispense.notDoneReason
-      :MedicationDispense.notDone
-      :MedicationDispense.notDoneReason.CodeableConcept
-      :MedicationDispense.notDoneReason.Reference
-      :MedicationDispense.performer.onBehalfOf
-      :MedicationRequest.context
-      :MedicationRequest.definition
-      :MedicationRequest.requester.agent
-      :MedicationRequest.requester.id
-      :MedicationRequest.requester.onBehalfOf
-      :MedicationRequest.substitution.allowed
-      :MedicationStatement.reasonNotTaken
-      :MedicationStatement.taken)},
+      :Medication.package.id)},
     :shared
-    {:count 154,
+    {:count 16,
      :fields
      (:Medication.code
       :Medication.contained
@@ -5732,145 +5000,7 @@
       :Medication.manufacturer
       :Medication.meta
       :Medication.status
-      :Medication.text
-      :MedicationAdministration.category
-      :MedicationAdministration.contained
-      :MedicationAdministration.context
-      :MedicationAdministration.device
-      :MedicationAdministration.dosage
-      :MedicationAdministration.dosage.dose
-      :MedicationAdministration.dosage.id
-      :MedicationAdministration.dosage.method
-      :MedicationAdministration.dosage.rate.Quantity
-      :MedicationAdministration.dosage.rate.Ratio
-      :MedicationAdministration.dosage.route
-      :MedicationAdministration.dosage.site
-      :MedicationAdministration.dosage.text
-      :MedicationAdministration.edicationAdministration.dosage.rate
-      :MedicationAdministration.edicationAdministration.effective
-      :MedicationAdministration.edicationAdministration.medication
-      :MedicationAdministration.effective.Period
-      :MedicationAdministration.effective.dateTime
-      :MedicationAdministration.eventHistory
-      :MedicationAdministration.id
-      :MedicationAdministration.identifier
-      :MedicationAdministration.implicitRules
-      :MedicationAdministration.language
-      :MedicationAdministration.medication.CodeableConcept
-      :MedicationAdministration.medication.Reference
-      :MedicationAdministration.meta
-      :MedicationAdministration.note
-      :MedicationAdministration.partOf
-      :MedicationAdministration.performer
-      :MedicationAdministration.performer.actor
-      :MedicationAdministration.performer.id
-      :MedicationAdministration.reasonCode
-      :MedicationAdministration.reasonReference
-      :MedicationAdministration.status
-      :MedicationAdministration.subject
-      :MedicationAdministration.supportingInformation
-      :MedicationAdministration.text
-      :MedicationDispense.authorizingPrescription
-      :MedicationDispense.category
-      :MedicationDispense.contained
-      :MedicationDispense.context
-      :MedicationDispense.daysSupply
-      :MedicationDispense.destination
-      :MedicationDispense.detectedIssue
-      :MedicationDispense.dosageInstruction
-      :MedicationDispense.edicationDispense.medication
-      :MedicationDispense.eventHistory
-      :MedicationDispense.id
-      :MedicationDispense.identifier
-      :MedicationDispense.implicitRules
-      :MedicationDispense.language
-      :MedicationDispense.medication.CodeableConcept
-      :MedicationDispense.medication.Reference
-      :MedicationDispense.meta
-      :MedicationDispense.note
-      :MedicationDispense.partOf
-      :MedicationDispense.performer
-      :MedicationDispense.performer.actor
-      :MedicationDispense.performer.id
-      :MedicationDispense.quantity
-      :MedicationDispense.receiver
-      :MedicationDispense.status
-      :MedicationDispense.subject
-      :MedicationDispense.substitution
-      :MedicationDispense.substitution.id
-      :MedicationDispense.substitution.reason
-      :MedicationDispense.substitution.responsibleParty
-      :MedicationDispense.substitution.type
-      :MedicationDispense.substitution.wasSubstituted
-      :MedicationDispense.supportingInformation
-      :MedicationDispense.text
-      :MedicationDispense.type
-      :MedicationDispense.whenHandedOver
-      :MedicationDispense.whenPrepared
-      :MedicationRequest.authoredOn
-      :MedicationRequest.basedOn
-      :MedicationRequest.category
-      :MedicationRequest.contained
-      :MedicationRequest.detectedIssue
-      :MedicationRequest.dispenseRequest
-      :MedicationRequest.dispenseRequest.expectedSupplyDuration
-      :MedicationRequest.dispenseRequest.id
-      :MedicationRequest.dispenseRequest.numberOfRepeatsAllowed
-      :MedicationRequest.dispenseRequest.performer
-      :MedicationRequest.dispenseRequest.quantity
-      :MedicationRequest.dispenseRequest.validityPeriod
-      :MedicationRequest.dosageInstruction
-      :MedicationRequest.edicationRequest.medication
-      :MedicationRequest.eventHistory
-      :MedicationRequest.groupIdentifier
-      :MedicationRequest.id
-      :MedicationRequest.identifier
-      :MedicationRequest.implicitRules
-      :MedicationRequest.intent
-      :MedicationRequest.language
-      :MedicationRequest.medication.CodeableConcept
-      :MedicationRequest.medication.Reference
-      :MedicationRequest.meta
-      :MedicationRequest.note
-      :MedicationRequest.priorPrescription
-      :MedicationRequest.priority
-      :MedicationRequest.reasonCode
-      :MedicationRequest.reasonReference
-      :MedicationRequest.recorder
-      :MedicationRequest.requester
-      :MedicationRequest.status
-      :MedicationRequest.subject
-      :MedicationRequest.substitution
-      :MedicationRequest.substitution.id
-      :MedicationRequest.substitution.reason
-      :MedicationRequest.supportingInformation
-      :MedicationRequest.text
-      :MedicationStatement.basedOn
-      :MedicationStatement.category
-      :MedicationStatement.contained
-      :MedicationStatement.context
-      :MedicationStatement.dateAsserted
-      :MedicationStatement.derivedFrom
-      :MedicationStatement.dosage
-      :MedicationStatement.edicationStatement.effective
-      :MedicationStatement.edicationStatement.medication
-      :MedicationStatement.effective.Period
-      :MedicationStatement.effective.dateTime
-      :MedicationStatement.id
-      :MedicationStatement.identifier
-      :MedicationStatement.implicitRules
-      :MedicationStatement.informationSource
-      :MedicationStatement.language
-      :MedicationStatement.medication.CodeableConcept
-      :MedicationStatement.medication.Reference
-      :MedicationStatement.meta
-      :MedicationStatement.note
-      :MedicationStatement.partOf
-      :MedicationStatement.reasonCode
-      :MedicationStatement.reasonReference
-      :MedicationStatement.status
-      :MedicationStatement.subject
-      :MedicationStatement.text)}},
+      :Medication.text)}},
    :AppointmentResponse
    {:added {:count 0, :fields ()},
     :deleted {:count 0, :fields ()},
@@ -5892,294 +5022,7 @@
       :AppointmentResponse.start
       :AppointmentResponse.text)}},
    :Substance
-   {:added
-    {:count 285,
-     :fields
-     (:SubstanceAmount.amount.Quantity
-      :SubstanceAmount.amount.Range
-      :SubstanceAmount.amount.string
-      :SubstanceAmount.amountText
-      :SubstanceAmount.amountType
-      :SubstanceAmount.id
-      :SubstanceAmount.referenceRange
-      :SubstanceAmount.referenceRange.highLimit
-      :SubstanceAmount.referenceRange.id
-      :SubstanceAmount.referenceRange.lowLimit
-      :SubstanceAmount.ubstanceAmount.amount
-      :SubstanceNucleicAcid.areaOfHybridisation
-      :SubstanceNucleicAcid.contained
-      :SubstanceNucleicAcid.id
-      :SubstanceNucleicAcid.implicitRules
-      :SubstanceNucleicAcid.language
-      :SubstanceNucleicAcid.meta
-      :SubstanceNucleicAcid.numberOfSubunits
-      :SubstanceNucleicAcid.oligoNucleotideType
-      :SubstanceNucleicAcid.sequenceType
-      :SubstanceNucleicAcid.subunit
-      :SubstanceNucleicAcid.subunit.fivePrime
-      :SubstanceNucleicAcid.subunit.id
-      :SubstanceNucleicAcid.subunit.length
-      :SubstanceNucleicAcid.subunit.linkage
-      :SubstanceNucleicAcid.subunit.linkage.connectivity
-      :SubstanceNucleicAcid.subunit.linkage.id
-      :SubstanceNucleicAcid.subunit.linkage.identifier
-      :SubstanceNucleicAcid.subunit.linkage.name
-      :SubstanceNucleicAcid.subunit.linkage.residueSite
-      :SubstanceNucleicAcid.subunit.sequence
-      :SubstanceNucleicAcid.subunit.sequenceAttachment
-      :SubstanceNucleicAcid.subunit.subunit
-      :SubstanceNucleicAcid.subunit.sugar
-      :SubstanceNucleicAcid.subunit.sugar.id
-      :SubstanceNucleicAcid.subunit.sugar.identifier
-      :SubstanceNucleicAcid.subunit.sugar.name
-      :SubstanceNucleicAcid.subunit.sugar.residueSite
-      :SubstanceNucleicAcid.subunit.threePrime
-      :SubstanceNucleicAcid.text
-      :SubstancePolymer.class
-      :SubstancePolymer.contained
-      :SubstancePolymer.copolymerConnectivity
-      :SubstancePolymer.geometry
-      :SubstancePolymer.id
-      :SubstancePolymer.implicitRules
-      :SubstancePolymer.language
-      :SubstancePolymer.meta
-      :SubstancePolymer.modification
-      :SubstancePolymer.monomerSet
-      :SubstancePolymer.monomerSet.id
-      :SubstancePolymer.monomerSet.ratioType
-      :SubstancePolymer.monomerSet.startingMaterial
-      :SubstancePolymer.monomerSet.startingMaterial.amount
-      :SubstancePolymer.monomerSet.startingMaterial.id
-      :SubstancePolymer.monomerSet.startingMaterial.isDefining
-      :SubstancePolymer.monomerSet.startingMaterial.material
-      :SubstancePolymer.monomerSet.startingMaterial.type
-      :SubstancePolymer.repeat
-      :SubstancePolymer.repeat.averageMolecularFormula
-      :SubstancePolymer.repeat.id
-      :SubstancePolymer.repeat.numberOfUnits
-      :SubstancePolymer.repeat.repeatUnit
-      :SubstancePolymer.repeat.repeatUnit.amount
-      :SubstancePolymer.repeat.repeatUnit.degreeOfPolymerisation
-      :SubstancePolymer.repeat.repeatUnit.degreeOfPolymerisation.amount
-      :SubstancePolymer.repeat.repeatUnit.degreeOfPolymerisation.degree
-      :SubstancePolymer.repeat.repeatUnit.degreeOfPolymerisation.id
-      :SubstancePolymer.repeat.repeatUnit.id
-      :SubstancePolymer.repeat.repeatUnit.orientationOfPolymerisation
-      :SubstancePolymer.repeat.repeatUnit.repeatUnit
-      :SubstancePolymer.repeat.repeatUnit.structuralRepresentation
-      :SubstancePolymer.repeat.repeatUnit.structuralRepresentation.attachment
-      :SubstancePolymer.repeat.repeatUnit.structuralRepresentation.id
-      :SubstancePolymer.repeat.repeatUnit.structuralRepresentation.representation
-      :SubstancePolymer.repeat.repeatUnit.structuralRepresentation.type
-      :SubstancePolymer.repeat.repeatUnitAmountType
-      :SubstancePolymer.text
-      :SubstanceProtein.contained
-      :SubstanceProtein.disulfideLinkage
-      :SubstanceProtein.id
-      :SubstanceProtein.implicitRules
-      :SubstanceProtein.language
-      :SubstanceProtein.meta
-      :SubstanceProtein.numberOfSubunits
-      :SubstanceProtein.sequenceType
-      :SubstanceProtein.subunit
-      :SubstanceProtein.subunit.cTerminalModification
-      :SubstanceProtein.subunit.cTerminalModificationId
-      :SubstanceProtein.subunit.id
-      :SubstanceProtein.subunit.length
-      :SubstanceProtein.subunit.nTerminalModification
-      :SubstanceProtein.subunit.nTerminalModificationId
-      :SubstanceProtein.subunit.sequence
-      :SubstanceProtein.subunit.sequenceAttachment
-      :SubstanceProtein.subunit.subunit
-      :SubstanceProtein.text
-      :SubstanceReferenceInformation.classification
-      :SubstanceReferenceInformation.classification.classification
-      :SubstanceReferenceInformation.classification.domain
-      :SubstanceReferenceInformation.classification.id
-      :SubstanceReferenceInformation.classification.source
-      :SubstanceReferenceInformation.classification.subtype
-      :SubstanceReferenceInformation.comment
-      :SubstanceReferenceInformation.contained
-      :SubstanceReferenceInformation.gene
-      :SubstanceReferenceInformation.gene.gene
-      :SubstanceReferenceInformation.gene.geneSequenceOrigin
-      :SubstanceReferenceInformation.gene.id
-      :SubstanceReferenceInformation.gene.source
-      :SubstanceReferenceInformation.geneElement
-      :SubstanceReferenceInformation.geneElement.element
-      :SubstanceReferenceInformation.geneElement.id
-      :SubstanceReferenceInformation.geneElement.source
-      :SubstanceReferenceInformation.geneElement.type
-      :SubstanceReferenceInformation.id
-      :SubstanceReferenceInformation.implicitRules
-      :SubstanceReferenceInformation.language
-      :SubstanceReferenceInformation.meta
-      :SubstanceReferenceInformation.target
-      :SubstanceReferenceInformation.target.amount.Quantity
-      :SubstanceReferenceInformation.target.amount.Range
-      :SubstanceReferenceInformation.target.amount.string
-      :SubstanceReferenceInformation.target.amountType
-      :SubstanceReferenceInformation.target.id
-      :SubstanceReferenceInformation.target.interaction
-      :SubstanceReferenceInformation.target.organism
-      :SubstanceReferenceInformation.target.organismType
-      :SubstanceReferenceInformation.target.source
-      :SubstanceReferenceInformation.target.target
-      :SubstanceReferenceInformation.target.type
-      :SubstanceReferenceInformation.text
-      :SubstanceReferenceInformation.ubstanceReferenceInformation.target.amount
-      :SubstanceSourceMaterial.contained
-      :SubstanceSourceMaterial.countryOfOrigin
-      :SubstanceSourceMaterial.developmentStage
-      :SubstanceSourceMaterial.fractionDescription
-      :SubstanceSourceMaterial.fractionDescription.fraction
-      :SubstanceSourceMaterial.fractionDescription.id
-      :SubstanceSourceMaterial.fractionDescription.materialType
-      :SubstanceSourceMaterial.geographicalLocation
-      :SubstanceSourceMaterial.id
-      :SubstanceSourceMaterial.implicitRules
-      :SubstanceSourceMaterial.language
-      :SubstanceSourceMaterial.meta
-      :SubstanceSourceMaterial.organism
-      :SubstanceSourceMaterial.organism.author
-      :SubstanceSourceMaterial.organism.author.authorDescription
-      :SubstanceSourceMaterial.organism.author.authorType
-      :SubstanceSourceMaterial.organism.author.id
-      :SubstanceSourceMaterial.organism.family
-      :SubstanceSourceMaterial.organism.genus
-      :SubstanceSourceMaterial.organism.hybrid
-      :SubstanceSourceMaterial.organism.hybrid.hybridType
-      :SubstanceSourceMaterial.organism.hybrid.id
-      :SubstanceSourceMaterial.organism.hybrid.maternalOrganismId
-      :SubstanceSourceMaterial.organism.hybrid.maternalOrganismName
-      :SubstanceSourceMaterial.organism.hybrid.paternalOrganismId
-      :SubstanceSourceMaterial.organism.hybrid.paternalOrganismName
-      :SubstanceSourceMaterial.organism.id
-      :SubstanceSourceMaterial.organism.intraspecificDescription
-      :SubstanceSourceMaterial.organism.intraspecificType
-      :SubstanceSourceMaterial.organism.organismGeneral
-      :SubstanceSourceMaterial.organism.organismGeneral.class
-      :SubstanceSourceMaterial.organism.organismGeneral.id
-      :SubstanceSourceMaterial.organism.organismGeneral.kingdom
-      :SubstanceSourceMaterial.organism.organismGeneral.order
-      :SubstanceSourceMaterial.organism.organismGeneral.phylum
-      :SubstanceSourceMaterial.organism.species
-      :SubstanceSourceMaterial.organismId
-      :SubstanceSourceMaterial.organismName
-      :SubstanceSourceMaterial.parentSubstanceId
-      :SubstanceSourceMaterial.parentSubstanceName
-      :SubstanceSourceMaterial.partDescription
-      :SubstanceSourceMaterial.partDescription.id
-      :SubstanceSourceMaterial.partDescription.part
-      :SubstanceSourceMaterial.partDescription.partLocation
-      :SubstanceSourceMaterial.sourceMaterialClass
-      :SubstanceSourceMaterial.sourceMaterialState
-      :SubstanceSourceMaterial.sourceMaterialType
-      :SubstanceSourceMaterial.text
-      :SubstanceSpecification.code
-      :SubstanceSpecification.code.code
-      :SubstanceSpecification.code.comment
-      :SubstanceSpecification.code.id
-      :SubstanceSpecification.code.source
-      :SubstanceSpecification.code.status
-      :SubstanceSpecification.code.statusDate
-      :SubstanceSpecification.comment
-      :SubstanceSpecification.contained
-      :SubstanceSpecification.description
-      :SubstanceSpecification.domain
-      :SubstanceSpecification.id
-      :SubstanceSpecification.identifier
-      :SubstanceSpecification.implicitRules
-      :SubstanceSpecification.language
-      :SubstanceSpecification.meta
-      :SubstanceSpecification.moiety
-      :SubstanceSpecification.moiety.amount.Quantity
-      :SubstanceSpecification.moiety.amount.string
-      :SubstanceSpecification.moiety.id
-      :SubstanceSpecification.moiety.identifier
-      :SubstanceSpecification.moiety.molecularFormula
-      :SubstanceSpecification.moiety.name
-      :SubstanceSpecification.moiety.opticalActivity
-      :SubstanceSpecification.moiety.role
-      :SubstanceSpecification.moiety.stereochemistry
-      :SubstanceSpecification.molecularWeight
-      :SubstanceSpecification.name
-      :SubstanceSpecification.name.domain
-      :SubstanceSpecification.name.id
-      :SubstanceSpecification.name.jurisdiction
-      :SubstanceSpecification.name.language
-      :SubstanceSpecification.name.name
-      :SubstanceSpecification.name.official
-      :SubstanceSpecification.name.official.authority
-      :SubstanceSpecification.name.official.date
-      :SubstanceSpecification.name.official.id
-      :SubstanceSpecification.name.official.status
-      :SubstanceSpecification.name.preferred
-      :SubstanceSpecification.name.source
-      :SubstanceSpecification.name.status
-      :SubstanceSpecification.name.synonym
-      :SubstanceSpecification.name.translation
-      :SubstanceSpecification.name.type
-      :SubstanceSpecification.nucleicAcid
-      :SubstanceSpecification.polymer
-      :SubstanceSpecification.property
-      :SubstanceSpecification.property.amount.Quantity
-      :SubstanceSpecification.property.amount.string
-      :SubstanceSpecification.property.category
-      :SubstanceSpecification.property.code
-      :SubstanceSpecification.property.definingSubstance.CodeableConcept
-      :SubstanceSpecification.property.definingSubstance.Reference
-      :SubstanceSpecification.property.id
-      :SubstanceSpecification.property.parameters
-      :SubstanceSpecification.protein
-      :SubstanceSpecification.referenceInformation
-      :SubstanceSpecification.relationship
-      :SubstanceSpecification.relationship.amount.Quantity
-      :SubstanceSpecification.relationship.amount.Range
-      :SubstanceSpecification.relationship.amount.Ratio
-      :SubstanceSpecification.relationship.amount.string
-      :SubstanceSpecification.relationship.amountRatioLowLimit
-      :SubstanceSpecification.relationship.amountType
-      :SubstanceSpecification.relationship.id
-      :SubstanceSpecification.relationship.isDefining
-      :SubstanceSpecification.relationship.relationship
-      :SubstanceSpecification.relationship.source
-      :SubstanceSpecification.relationship.substance.CodeableConcept
-      :SubstanceSpecification.relationship.substance.Reference
-      :SubstanceSpecification.source
-      :SubstanceSpecification.sourceMaterial
-      :SubstanceSpecification.status
-      :SubstanceSpecification.structure
-      :SubstanceSpecification.structure.id
-      :SubstanceSpecification.structure.isotope
-      :SubstanceSpecification.structure.isotope.halfLife
-      :SubstanceSpecification.structure.isotope.id
-      :SubstanceSpecification.structure.isotope.identifier
-      :SubstanceSpecification.structure.isotope.molecularWeight
-      :SubstanceSpecification.structure.isotope.molecularWeight.amount
-      :SubstanceSpecification.structure.isotope.molecularWeight.id
-      :SubstanceSpecification.structure.isotope.molecularWeight.method
-      :SubstanceSpecification.structure.isotope.molecularWeight.type
-      :SubstanceSpecification.structure.isotope.name
-      :SubstanceSpecification.structure.isotope.substitution
-      :SubstanceSpecification.structure.molecularFormula
-      :SubstanceSpecification.structure.molecularFormulaByMoiety
-      :SubstanceSpecification.structure.molecularWeight
-      :SubstanceSpecification.structure.opticalActivity
-      :SubstanceSpecification.structure.representation
-      :SubstanceSpecification.structure.representation.attachment
-      :SubstanceSpecification.structure.representation.id
-      :SubstanceSpecification.structure.representation.representation
-      :SubstanceSpecification.structure.representation.type
-      :SubstanceSpecification.structure.source
-      :SubstanceSpecification.structure.stereochemistry
-      :SubstanceSpecification.text
-      :SubstanceSpecification.type
-      :SubstanceSpecification.ubstanceSpecification.moiety.amount
-      :SubstanceSpecification.ubstanceSpecification.property.amount
-      :SubstanceSpecification.ubstanceSpecification.property.definingSubstance
-      :SubstanceSpecification.ubstanceSpecification.relationship.amount
-      :SubstanceSpecification.ubstanceSpecification.relationship.substance)},
+   {:added {:count 0, :fields ()},
     :deleted {:count 0, :fields ()},
     :shared
     {:count 22,
@@ -6499,53 +5342,13 @@
       :Procedure.recorder
       :Procedure.statusReason)},
     :deleted
-    {:count 45,
+    {:count 5,
      :fields
      (:Procedure.context
       :Procedure.definition
       :Procedure.notDone
       :Procedure.notDoneReason
-      :Procedure.performer.role
-      :ProcedureRequest.asNeeded.CodeableConcept
-      :ProcedureRequest.asNeeded.boolean
-      :ProcedureRequest.authoredOn
-      :ProcedureRequest.basedOn
-      :ProcedureRequest.bodySite
-      :ProcedureRequest.category
-      :ProcedureRequest.code
-      :ProcedureRequest.contained
-      :ProcedureRequest.context
-      :ProcedureRequest.definition
-      :ProcedureRequest.doNotPerform
-      :ProcedureRequest.id
-      :ProcedureRequest.identifier
-      :ProcedureRequest.implicitRules
-      :ProcedureRequest.intent
-      :ProcedureRequest.language
-      :ProcedureRequest.meta
-      :ProcedureRequest.note
-      :ProcedureRequest.occurrence.Period
-      :ProcedureRequest.occurrence.Timing
-      :ProcedureRequest.occurrence.dateTime
-      :ProcedureRequest.performer
-      :ProcedureRequest.performerType
-      :ProcedureRequest.priority
-      :ProcedureRequest.reasonCode
-      :ProcedureRequest.reasonReference
-      :ProcedureRequest.relevantHistory
-      :ProcedureRequest.replaces
-      :ProcedureRequest.requester
-      :ProcedureRequest.requester.agent
-      :ProcedureRequest.requester.id
-      :ProcedureRequest.requester.onBehalfOf
-      :ProcedureRequest.requisition
-      :ProcedureRequest.rocedureRequest.asNeeded
-      :ProcedureRequest.rocedureRequest.occurrence
-      :ProcedureRequest.specimen
-      :ProcedureRequest.status
-      :ProcedureRequest.subject
-      :ProcedureRequest.supportingInfo
-      :ProcedureRequest.text)},
+      :Procedure.performer.role)},
     :shared
     {:count 36,
      :fields
@@ -6729,27 +5532,7 @@
       :Location.text
       :Location.type)}},
    :Organization
-   {:added
-    {:count 18,
-     :fields
-     (:OrganizationAffiliation.active
-      :OrganizationAffiliation.code
-      :OrganizationAffiliation.contained
-      :OrganizationAffiliation.endpoint
-      :OrganizationAffiliation.healthcareService
-      :OrganizationAffiliation.id
-      :OrganizationAffiliation.identifier
-      :OrganizationAffiliation.implicitRules
-      :OrganizationAffiliation.language
-      :OrganizationAffiliation.location
-      :OrganizationAffiliation.meta
-      :OrganizationAffiliation.network
-      :OrganizationAffiliation.organization
-      :OrganizationAffiliation.participatingOrganization
-      :OrganizationAffiliation.period
-      :OrganizationAffiliation.specialty
-      :OrganizationAffiliation.telecom
-      :OrganizationAffiliation.text)},
+   {:added {:count 0, :fields ()},
     :deleted {:count 0, :fields ()},
     :shared
     {:count 21,
@@ -6777,7 +5560,7 @@
       :Organization.type)}},
    :Device
    {:added
-    {:count 99,
+    {:count 32,
      :fields
      (:Device.definition
       :Device.deviceName
@@ -6810,76 +5593,9 @@
       :Device.version.component
       :Device.version.id
       :Device.version.type
-      :Device.version.value
-      :DeviceDefinition.capability
-      :DeviceDefinition.capability.description
-      :DeviceDefinition.capability.id
-      :DeviceDefinition.capability.type
-      :DeviceDefinition.contact
-      :DeviceDefinition.contained
-      :DeviceDefinition.deviceName
-      :DeviceDefinition.deviceName.id
-      :DeviceDefinition.deviceName.name
-      :DeviceDefinition.deviceName.type
-      :DeviceDefinition.eviceDefinition.manufacturer
-      :DeviceDefinition.id
-      :DeviceDefinition.identifier
-      :DeviceDefinition.implicitRules
-      :DeviceDefinition.language
-      :DeviceDefinition.languageCode
-      :DeviceDefinition.manufacturer.Reference
-      :DeviceDefinition.manufacturer.string
-      :DeviceDefinition.material
-      :DeviceDefinition.material.allergenicIndicator
-      :DeviceDefinition.material.alternate
-      :DeviceDefinition.material.id
-      :DeviceDefinition.material.substance
-      :DeviceDefinition.meta
-      :DeviceDefinition.modelNumber
-      :DeviceDefinition.note
-      :DeviceDefinition.onlineInformation
-      :DeviceDefinition.owner
-      :DeviceDefinition.parentDevice
-      :DeviceDefinition.physicalCharacteristics
-      :DeviceDefinition.property
-      :DeviceDefinition.property.id
-      :DeviceDefinition.property.type
-      :DeviceDefinition.property.valueCode
-      :DeviceDefinition.property.valueQuantity
-      :DeviceDefinition.quantity
-      :DeviceDefinition.safety
-      :DeviceDefinition.shelfLifeStorage
-      :DeviceDefinition.specialization
-      :DeviceDefinition.specialization.id
-      :DeviceDefinition.specialization.systemType
-      :DeviceDefinition.specialization.version
-      :DeviceDefinition.text
-      :DeviceDefinition.type
-      :DeviceDefinition.udiDeviceIdentifier
-      :DeviceDefinition.udiDeviceIdentifier.deviceIdentifier
-      :DeviceDefinition.udiDeviceIdentifier.id
-      :DeviceDefinition.udiDeviceIdentifier.issuer
-      :DeviceDefinition.udiDeviceIdentifier.jurisdiction
-      :DeviceDefinition.url
-      :DeviceDefinition.version
-      :DeviceRequest.encounter
-      :DeviceRequest.eviceRequest.parameter.value
-      :DeviceRequest.instantiatesCanonical
-      :DeviceRequest.instantiatesUri
-      :DeviceRequest.insurance
-      :DeviceRequest.parameter
-      :DeviceRequest.parameter.code
-      :DeviceRequest.parameter.id
-      :DeviceRequest.parameter.value.CodeableConcept
-      :DeviceRequest.parameter.value.Quantity
-      :DeviceRequest.parameter.value.Range
-      :DeviceRequest.parameter.value.boolean
-      :DeviceUseStatement.basedOn
-      :DeviceUseStatement.derivedFrom
-      :DeviceUseStatement.reasonCode
-      :DeviceUseStatement.reasonReference)},
+      :Device.version.value)},
     :deleted
-    {:count 37,
+    {:count 10,
      :fields
      (:Device.model
       :Device.udi
@@ -6890,36 +5606,9 @@
       :Device.udi.id
       :Device.udi.issuer
       :Device.udi.jurisdiction
-      :Device.udi.name
-      :DeviceComponent.contained
-      :DeviceComponent.id
-      :DeviceComponent.identifier
-      :DeviceComponent.implicitRules
-      :DeviceComponent.language
-      :DeviceComponent.languageCode
-      :DeviceComponent.lastSystemChange
-      :DeviceComponent.measurementPrinciple
-      :DeviceComponent.meta
-      :DeviceComponent.operationalStatus
-      :DeviceComponent.parameterGroup
-      :DeviceComponent.parent
-      :DeviceComponent.productionSpecification
-      :DeviceComponent.productionSpecification.componentId
-      :DeviceComponent.productionSpecification.id
-      :DeviceComponent.productionSpecification.productionSpec
-      :DeviceComponent.productionSpecification.specType
-      :DeviceComponent.source
-      :DeviceComponent.text
-      :DeviceComponent.type
-      :DeviceRequest.context
-      :DeviceRequest.definition
-      :DeviceRequest.requester.agent
-      :DeviceRequest.requester.id
-      :DeviceRequest.requester.onBehalfOf
-      :DeviceUseStatement.indication
-      :DeviceUseStatement.whenUsed)},
+      :Device.udi.name)},
     :shared
-    {:count 89,
+    {:count 21,
      :fields
      (:Device.contact
       :Device.contained
@@ -6941,75 +5630,7 @@
       :Device.text
       :Device.type
       :Device.url
-      :Device.version
-      :DeviceMetric.calibration
-      :DeviceMetric.calibration.id
-      :DeviceMetric.calibration.state
-      :DeviceMetric.calibration.time
-      :DeviceMetric.calibration.type
-      :DeviceMetric.category
-      :DeviceMetric.color
-      :DeviceMetric.contained
-      :DeviceMetric.id
-      :DeviceMetric.identifier
-      :DeviceMetric.implicitRules
-      :DeviceMetric.language
-      :DeviceMetric.measurementPeriod
-      :DeviceMetric.meta
-      :DeviceMetric.operationalStatus
-      :DeviceMetric.parent
-      :DeviceMetric.source
-      :DeviceMetric.text
-      :DeviceMetric.type
-      :DeviceMetric.unit
-      :DeviceRequest.authoredOn
-      :DeviceRequest.basedOn
-      :DeviceRequest.code.CodeableConcept
-      :DeviceRequest.code.Reference
-      :DeviceRequest.contained
-      :DeviceRequest.eviceRequest.code
-      :DeviceRequest.eviceRequest.occurrence
-      :DeviceRequest.groupIdentifier
-      :DeviceRequest.id
-      :DeviceRequest.identifier
-      :DeviceRequest.implicitRules
-      :DeviceRequest.intent
-      :DeviceRequest.language
-      :DeviceRequest.meta
-      :DeviceRequest.note
-      :DeviceRequest.occurrence.Period
-      :DeviceRequest.occurrence.Timing
-      :DeviceRequest.occurrence.dateTime
-      :DeviceRequest.performer
-      :DeviceRequest.performerType
-      :DeviceRequest.priorRequest
-      :DeviceRequest.priority
-      :DeviceRequest.reasonCode
-      :DeviceRequest.reasonReference
-      :DeviceRequest.relevantHistory
-      :DeviceRequest.requester
-      :DeviceRequest.status
-      :DeviceRequest.subject
-      :DeviceRequest.supportingInfo
-      :DeviceRequest.text
-      :DeviceUseStatement.bodySite
-      :DeviceUseStatement.contained
-      :DeviceUseStatement.device
-      :DeviceUseStatement.eviceUseStatement.timing
-      :DeviceUseStatement.id
-      :DeviceUseStatement.identifier
-      :DeviceUseStatement.implicitRules
-      :DeviceUseStatement.language
-      :DeviceUseStatement.meta
-      :DeviceUseStatement.note
-      :DeviceUseStatement.recordedOn
-      :DeviceUseStatement.source
-      :DeviceUseStatement.status
-      :DeviceUseStatement.subject
-      :DeviceUseStatement.text
-      :DeviceUseStatement.timing.Period
-      :DeviceUseStatement.timing.Timing
-      :DeviceUseStatement.timing.dateTime)}},
+      :Device.version)}},
    :SupplyRequest
    {:added
     {:count 14,
@@ -7661,32 +6282,14 @@
    {:added {:count 1, :fields (:Meta.source)},
     :deleted {:count 0, :fields ()},
     :shared
-    {:count 24,
+    {:count 6,
      :fields
      (:Meta.id
       :Meta.lastUpdated
       :Meta.profile
       :Meta.security
       :Meta.tag
-      :Meta.versionId
-      :MetadataResource.contact
-      :MetadataResource.contained
-      :MetadataResource.date
-      :MetadataResource.description
-      :MetadataResource.experimental
-      :MetadataResource.id
-      :MetadataResource.implicitRules
-      :MetadataResource.jurisdiction
-      :MetadataResource.language
-      :MetadataResource.meta
-      :MetadataResource.name
-      :MetadataResource.publisher
-      :MetadataResource.status
-      :MetadataResource.text
-      :MetadataResource.title
-      :MetadataResource.url
-      :MetadataResource.useContext
-      :MetadataResource.version)}},
+      :Meta.versionId)}},
    :Distance
    {:added {:count 0, :fields ()},
     :deleted {:count 0, :fields ()},
@@ -8095,16 +6698,7 @@
       :ContactPoint.use
       :ContactPoint.value)}},
    :Money
-   {:added
-    {:count 7,
-     :fields
-     (:Money.currency
-      :MoneyQuantity.code
-      :MoneyQuantity.comparator
-      :MoneyQuantity.id
-      :MoneyQuantity.system
-      :MoneyQuantity.unit
-      :MoneyQuantity.value)},
+   {:added {:count 1, :fields (:Money.currency)},
     :deleted
     {:count 4,
      :fields
