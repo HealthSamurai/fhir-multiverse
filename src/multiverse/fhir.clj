@@ -1,5 +1,6 @@
 (ns multiverse.fhir
   (:require [clojure.java.io :as io]
+            [ironhide.core :as ih]
             [clojure.string :as str]))
 
 
@@ -41,7 +42,7 @@
    fhir
    :resources
    :Attribute
-   (filter #(str/starts-with? (str (first %)) (str r)))
+   (filter #(str/starts-with? (str (first %)) (str r ".")))
    (map first)
    set))
 
@@ -116,7 +117,18 @@
  clojure.pprint/pprint
  )
 
-(clojure.pprint/pprint diff)
+(def
+  converter
+  #:ih {:direction [:r3 :r4]
+        :rules []})
+
+(->
+ diff
+ :resources
+ :fields
+ :Claim
+ clojure.pprint/pprint)
+;;Resource.field.field.field
 
 (comment
 
