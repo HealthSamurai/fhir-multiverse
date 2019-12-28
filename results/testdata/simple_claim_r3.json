@@ -1,0 +1,7 @@
+{
+  "resourceType": "Claim",
+  "id": "e0aed276-f41b-4d63-a70d-9509cd298dc2",
+  "originalPrescription": {
+    "reference": "/MedicationRequest/514472b0-f9e1-413a-bf5a-e83c76cb42a2"
+  }
+}
