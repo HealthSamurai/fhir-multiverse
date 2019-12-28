@@ -22,26 +22,44 @@
    keys
    set))
 
-(let [r3-resources      (get-resources r3)
-      r4-resources      (get-resources r4)
-      added-resources   (clojure.set/difference r4-resources r3-resources)
-      deleted-resources (clojure.set/difference r3-resources r4-resources)
-      shared-resources  (clojure.set/intersection r3-resources r4-resources)
-      ]
-    (def diff
-      {:resources
-       {:added   {:count (count added-resources)
-                  :resources added-resources}
-        :deleted {:count (count deleted-resources)
-                  :resources deleted-resources}
-        :shared  {:count (count shared-resources)
-                  :resources shared-resources}}})
+(defn get-types [fhir]
+  (->>
+   (get-in fhir [:resources :Entity])
+   (filter #(= "type" (get-in % [1 :type])))
+   keys
+   set))
 
-    (spit
-     "resources_diff.edn"
-     (with-out-str
-       (clojure.pprint/pprint diff)))
-    )
+(defn get-primitives [fhir]
+  (->>
+   (get-in fhir [:resources :Entity])
+   (filter #(= "primitive" (get-in % [1 :type])))
+   keys
+   set))
+
+(defn get-resources-diff [get-resources key]
+  (let [r3-resources      (get-resources r3)
+        r4-resources      (get-resources r4)
+        added-resources   (clojure.set/difference r4-resources r3-resources)
+        deleted-resources (clojure.set/difference r3-resources r4-resources)
+        shared-resources  (clojure.set/intersection r3-resources r4-resources)]
+    {:added   {:count (count added-resources)
+               key added-resources}
+     :deleted {:count (count deleted-resources)
+               key deleted-resources}
+     :shared  {:count (count shared-resources)
+               key shared-resources}}
+    ))
+
+
+(def diff
+  {:resources (get-resources-diff get-resources :resources)
+   :types (get-resources-diff get-types :types)
+   :primitives (get-resources-diff get-primitives :primitives)})
+
+(spit
+ "results/diff.edn"
+ (with-out-str
+   (clojure.pprint/pprint diff)))
 
 (def different-objects
   [:Patient :HumanName :decimal])
