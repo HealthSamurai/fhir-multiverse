@@ -106,6 +106,14 @@
    :resources
    :Attribute
    key))
+
+(defn get-attribute3 [key]
+  (->
+   r3
+   :resources
+   :Attribute
+   key))
+
 (do
   (defn keyword->path [k]
     (let [[resource & fields] (str/split (name k) #"\.")]
@@ -120,7 +128,9 @@
                {:path   []
                 :prefix resource}
                fields)
-       :path)))
+       :path
+       vec
+       )))
 
   (keyword->path :Claim.careTeam.id))
 
@@ -319,12 +329,14 @@
             []
             resources)
     )
-  (def resources-to-convert [:Claim :MedicationRequest :Medication])
-  (def super-converter
+
+  (defn get-super-converter [resources-to-convert]
     #:ih{:direction [:r3 :r4]
          :sights    (generate-sights resources-to-convert)
          :rules     (concat (generate-rules resources-to-convert)
-                            [])}))
+                            [])})
+  (def super-converter (get-super-converter [:Claim :MedicationRequest :Medication]))
+  )
 
 
 (do
@@ -403,7 +415,163 @@
 
 
 
-(get-attribute :Claim.payee)
+
+
+(defn get-suggestions [resource]
+  (let [removed-fields (get-in diff [:resources :fields resource :deleted :fields])]
+    (if (empty? removed-fields)
+      (println "==> This resource is safe for migration.")
+      (do
+        (println "==> Pay attention to following fields:")
+        (clojure.pprint/pprint
+         (get-in diff [:resources :fields resource :deleted :fields]))))))
+
+(defn get-all-suggestions [resources]
+  (mapv get-suggestions resources)
+  nil)
+
+(defn get-field-info [attr]
+  (println "==> " attr " information:")
+  (clojure.pprint/pprint (get-attribute3 attr)))
+
+(defn write-converter [converter file]
+  (spit
+   (str "results/" file)
+   (with-out-str
+     (clojure.pprint/pprint converter))))
+
+(defn apply-converter [converter db]
+  (->>
+   {:ih/data db}
+   (merge converter)
+   ih/execute
+   :ih/data))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(def resources-to-convert [:Claim :Medication :MedicationRequest])
+
+
+;; Show diffs
+
+(do
+  (def complete-converter (get-super-converter resources-to-convert))
+  (write-converter complete-converter "tmp-converter.edn"))
+
+(do
+  (def complete-converter
+    (read-string (slurp (str "results/tmp-converter.edn"))))
+  (def convert3-4 (partial apply-converter complete-converter))
+  (def convert4-3 (partial apply-converter
+                           (assoc complete-converter :ih/direction [:r4 :r3]))))
+
+
+(println "test")
+
+(get-suggestions :Patient)
+(get-suggestions :Practitioner)
+(get-suggestions :MedicationRequest)
+
+(get-all-suggestions resources-to-convert)
+
+(get-field-info :MedicationRequest.context)
+
+  ;; Extensions example
+
+(def r3-medication
+  (-> (slurp "results/mapping_example/MedicationR3_package_content.json")
+      (json/parse-string true)
+      ))
+
+(def r4-medication
+  (-> (slurp "results/mapping_example/MedicationR4_package_content.json")
+      (json/parse-string true)
+      ))
+
+(do
+  (println "==================================================================")
+  (println "==> r3 medication")
+  (clojure.pprint/pprint r3-medication)
+  (println "==> r4 medication")
+  (clojure.pprint/pprint r4-medication)
+  )
+
+(def test-db
+  {:r3 {:Medication [r3-medication]}})
+
+(do
+  (println "==================================================================")
+  (println "==> extension example:")
+  (->
+   (apply-converter complete-converter test-db)
+   clojure.pprint/pprint))
+(do
+  (println "==> r4 medication")
+  (clojure.pprint/pprint r4-medication))
+
+;; db workflow
+(do
+  (def test-db
+    {:r3
+     {:Claim             [(read-example "simple_claim_r3.json")]
+      :Medication        [(read-example "simple_medication_r3.json")]
+      :MedicationRequest [(read-example "simple_medicationrequest_r3.json")]}})
+  (def test-db-3 test-db)
+
+  (println "==> test-db r3")
+  (clojure.pprint/pprint (:r3 test-db-3)))
+
+(do
+  (println "==> converted test-db to r4")
+  (def db-with-r4 (convert3-4 test-db-3))
+  (clojure.pprint/pprint
+   (:r4 db-with-r4)))
+
+(do
+  (defn set-use [items value]
+    (map #(assoc % :use value) items))
+  (def modified-db
+    (->
+     db-with-r4
+     (update-in [:r4 :Claim] set-use "preauthorization")))
+  (println "==> modified r4 db:")
+  (clojure.pprint/pprint (:r4 modified-db))
+  )
+
+(do
+  (def backported-db
+    (convert4-3 modified-db))
+
+  (println "==> backported db:")
+  (clojure.pprint/pprint (:r3 backported-db))
+  )
+
+
+
 (comment
 
 
