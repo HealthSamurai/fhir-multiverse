@@ -2,8 +2,8 @@
   "resourceType": "MedicationRequest",
   "id": "514472b0-f9e1-413a-bf5a-e83c76cb42a2",
   "intent": "proposal",
-  "medicationReference": {
-    "reference": "/Medication/d47518f8-ac80-433c-b1e3-3ee8b2bad3db"
+  "medication": {
+	"Reference" : {"reference": "/Medication/d47518f8-ac80-433c-b1e3-3ee8b2bad3db"}
   },
   "subject": {
     "display": "Иванов Петр Олегович"

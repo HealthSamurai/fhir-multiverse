@@ -1,0 +1,64 @@
+{:r4
+ {:Claim
+  [{:patient {:display "Иванов Петр Олегович"},
+    :insurance
+    [{:sequence 1, :focal true, :coverage {:display "Best coverage"}}],
+    :use "claim",
+    :type
+    {:coding
+     [{:system "typesystem", :code "testtype", :display "display"}],
+     :text "text"},
+    :created "2019-11-25",
+    :resourceType "Claim",
+    :priority {:coding [{:system "prioritysystem", :code "first"}]},
+    :status "active",
+    :id "e0aed276-f41b-4d63-a70d-9509cd298dc2",
+    :provider {:display "ООО Лечим и Калечим"},
+    :originalPrescription
+    {:reference
+     "/MedicationRequest/514472b0-f9e1-413a-bf5a-e83c76cb42a2"}}],
+  :Medication
+  [{:resourceType "Medication",
+    :id "d47518f8-ac80-433c-b1e3-3ee8b2bad3db"}],
+  :MedicationRequest
+  [{:resourceType "MedicationRequest",
+    :id "514472b0-f9e1-413a-bf5a-e83c76cb42a2",
+    :status "active",
+    :intent "proposal",
+    :medicationReference
+    {:reference "/Medication/d47518f8-ac80-433c-b1e3-3ee8b2bad3db"},
+    :subject {:display "Иванов Петр Олегович"}}]},
+ :r3
+ {:Claim
+  ({:patient {:display "Иванов Петр Олегович"},
+    :insurance
+    ({:businessArrangement nil,
+      :claimResponse nil,
+      :coverage {:display "Best coverage"},
+      :focal true,
+      :id nil,
+      :sequence 1}),
+    :use "complete",
+    :type
+    {:coding
+     [{:system "typesystem", :code "testtype", :display "display"}],
+     :text "text"},
+    :created "2019-11-25",
+    :organization {:display "ООО Лечим и Калечим"},
+    :resourceType "Claim",
+    :priority {:coding [{:system "prioritysystem", :code "first"}]},
+    :status "active",
+    :id "e0aed276-f41b-4d63-a70d-9509cd298dc2",
+    :provider {:display "ООО Лечим и Калечим"},
+    :originalPrescription
+    {:reference
+     "/MedicationRequest/514472b0-f9e1-413a-bf5a-e83c76cb42a2"}}),
+  :MedicationRequest
+  ({:id "514472b0-f9e1-413a-bf5a-e83c76cb42a2",
+    :intent "proposal",
+    :status "active",
+    :subject {:display "Иванов Петр Олегович"},
+    :resourceType "MedicationRequest"}),
+  :Medication
+  ({:id "d47518f8-ac80-433c-b1e3-3ee8b2bad3db",
+    :resourceType "Medication"})}}

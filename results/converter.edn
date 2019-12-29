@@ -218,7 +218,147 @@
                  {:r3 (:total), :r4 (:total)}
                  {:r3 (:type), :r4 (:type)}
                  {:r3 (:use), :r4 (:use)}
+                 {:r3 [:resourceType], :r4 [:resourceType]}
                  {:r3 [:use :ihs/translate-use], :r4 [:use]}
                  {:r3 [:organization], :r4 [:provider]}
-                 {:r3 [:information], :r4 [:supportingInfo]})}},
-     :rules ({:r3 [:Claim [:*] :ihs/Claim], :r4 [:Claim [:*]]})}
+                 {:r3 [:information], :r4 [:supportingInfo]}
+                 {:r3 [:item [:*] :careTeamLinkId],
+                  :r4 [:item [:*] :careTeamSequence]}
+                 {:r3 [:item [:*] :diagnosisLink],
+                  :r4 [:item [:*] :diagnosisSequence]}
+                 {:r3 [:item [:*] :procedureLinkId],
+                  :r4 [:item [:*] :procedureSequence]}
+                 {:r3 [:item [:*] :infromationLinkId],
+                  :r4 [:item [:*] :infromationSequence]}
+                 {:r3 [:item [:*] :service],
+                  :r4 [:item [:*] :productOrService]}
+                 {:r3 [:item [:*] :detail :service],
+                  :r4 [:item [:*] :detail :productOrService]}
+                 {:r3 [:item [:*] :detail :subDetail :service],
+                  :r4
+                  [:item [:*] :detail :subDetail :productOrService]})},
+           :MedicationRequest
+           #:ih{:direction [:r3 :r4],
+                :sights {},
+                :rules
+                ({:r3 (:authoredOn), :r4 (:authoredOn)}
+                 {:r3 (:basedOn [:*]), :r4 (:basedOn [:*])}
+                 {:r3 (:category [:*]), :r4 (:category [:*])}
+                 {:r3 (:contained [:*]), :r4 (:contained [:*])}
+                 {:r3 (:detectedIssue [:*]), :r4 (:detectedIssue [:*])}
+                 {:r3 (:dispenseRequest :expectedSupplyDuration),
+                  :r4 (:dispenseRequest :expectedSupplyDuration)}
+                 {:r3 (:dispenseRequest :id),
+                  :r4 (:dispenseRequest :id)}
+                 {:r3 (:dispenseRequest :numberOfRepeatsAllowed),
+                  :r4 (:dispenseRequest :numberOfRepeatsAllowed)}
+                 {:r3 (:dispenseRequest :performer),
+                  :r4 (:dispenseRequest :performer)}
+                 {:r3 (:dispenseRequest :quantity),
+                  :r4 (:dispenseRequest :quantity)}
+                 {:r3 (:dispenseRequest :validityPeriod),
+                  :r4 (:dispenseRequest :validityPeriod)}
+                 {:r3 (:dosageInstruction [:*]),
+                  :r4 (:dosageInstruction [:*])}
+                 {:r3 (:eventHistory [:*]), :r4 (:eventHistory [:*])}
+                 {:r3 (:groupIdentifier), :r4 (:groupIdentifier)}
+                 {:r3 (:id), :r4 (:id)}
+                 {:r3 (:identifier [:*]), :r4 (:identifier [:*])}
+                 {:r3 (:implicitRules), :r4 (:implicitRules)}
+                 {:r3 (:intent), :r4 (:intent)}
+                 {:r3 (:language), :r4 (:language)}
+                 {:r3 (:medication :CodeableConcept),
+                  :r4 (:medication :CodeableConcept)}
+                 {:r3 (:medication :Reference),
+                  :r4 (:medication :Reference)}
+                 {:r3 (:meta), :r4 (:meta)}
+                 {:r3 (:note [:*]), :r4 (:note [:*])}
+                 {:r3 (:priorPrescription), :r4 (:priorPrescription)}
+                 {:r3 (:priority), :r4 (:priority)}
+                 {:r3 (:reasonCode [:*]), :r4 (:reasonCode [:*])}
+                 {:r3 (:reasonReference [:*]),
+                  :r4 (:reasonReference [:*])}
+                 {:r3 (:recorder), :r4 (:recorder)}
+                 {:r3 (:requester), :r4 (:requester)}
+                 {:r3 (:status), :r4 (:status)}
+                 {:r3 (:subject), :r4 (:subject)}
+                 {:r3 (:substitution :id), :r4 (:substitution :id)}
+                 {:r3 (:substitution :reason),
+                  :r4 (:substitution :reason)}
+                 {:r3 (:supportingInformation [:*]),
+                  :r4 (:supportingInformation [:*])}
+                 {:r3 (:text), :r4 (:text)}
+                 {:r3 [:resourceType], :r4 [:resourceType]}
+                 {:r3 [:definition], :r4 [:intstantiatesCanonical]}
+                 {:r3 [:context], :r4 [:encounter]}
+                 {:r3 [:agent], :r4 [:requester]})},
+           :Medication
+           #:ih{:direction [:r3 :r4],
+                :sights
+                #:ihs{:item<->extension
+                      #:ih{:direction [:r3 :r4], :rules []}},
+                :rules
+                ({:r3 (:code), :r4 (:code)}
+                 {:r3 (:contained [:*]), :r4 (:contained [:*])}
+                 {:r3 (:form), :r4 (:form)}
+                 {:r3 (:id), :r4 (:id)}
+                 {:r3 (:implicitRules), :r4 (:implicitRules)}
+                 {:r3 (:ingredient [:*] :id),
+                  :r4 (:ingredient [:*] :id)}
+                 {:r3 (:ingredient [:*] :isActive),
+                  :r4 (:ingredient [:*] :isActive)}
+                 {:r3 (:ingredient [:*] :item :CodeableConcept),
+                  :r4 (:ingredient [:*] :item :CodeableConcept)}
+                 {:r3 (:ingredient [:*] :item :Reference),
+                  :r4 (:ingredient [:*] :item :Reference)}
+                 {:r3 (:language), :r4 (:language)}
+                 {:r3 (:manufacturer), :r4 (:manufacturer)}
+                 {:r3 (:meta), :r4 (:meta)}
+                 {:r3 (:status), :r4 (:status)}
+                 {:r3 (:text), :r4 (:text)}
+                 {:r3 [:resourceType], :r4 [:resourceType]}
+                 {:r3 [:ingredient [:*] :amount],
+                  :r4 [:ingredient [:*] :strength]}
+                 {:r3
+                  [:package
+                   :content
+                   [:* {:itemCodeableConcept {}}]
+                   :itemCodeableConcept],
+                  :r4
+                  [:extension
+                   [:*
+                    {:url
+                     "http://hl7.org/fhir/3.0/StructureDefinition/extension-Medication.package.content",
+                     :extension
+                     [{:valueCodeableConcept {}, :url "item"}]}]
+                   :extension
+                   [0 {:url "item"}]
+                   :valueCodeableConcept]}
+                 {:r3
+                  [:package
+                   :content
+                   [:* {:itemReference {}}]
+                   :itemReference],
+                  :r4
+                  [:extension
+                   [:*
+                    {:url
+                     "http://hl7.org/fhir/3.0/StructureDefinition/extension-Medication.package.content",
+                     :extension [{:url "item", :valueReference {}}]}]
+                   :extension
+                   [0 {:url "item"}]
+                   :valueReference]}
+                 {:r3 [:package :content [:*] :amount],
+                  :r4
+                  [:extension
+                   [:*
+                    {:url
+                     "http://hl7.org/fhir/3.0/StructureDefinition/extension-Medication.package.content"}]
+                   :extension
+                   [0 {:url "amount"}]
+                   :valueQuantity]})}},
+     :rules
+     ({:r3 [:Claim [:*] :ihs/Claim], :r4 [:Claim [:*]]}
+      {:r3 [:MedicationRequest [:*] :ihs/MedicationRequest],
+       :r4 [:MedicationRequest [:*]]}
+      {:r3 [:Medication [:*] :ihs/Medication], :r4 [:Medication [:*]]})}

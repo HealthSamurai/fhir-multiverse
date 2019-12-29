@@ -1,0 +1,36 @@
+{:r3
+ {:Claim
+  [{:resourceType "Claim",
+    :id "e0aed276-f41b-4d63-a70d-9509cd298dc2",
+    :originalPrescription
+    {:reference
+     "/MedicationRequest/514472b0-f9e1-413a-bf5a-e83c76cb42a2"}}],
+  :Medication
+  [{:resourceType "Medication",
+    :id "d47518f8-ac80-433c-b1e3-3ee8b2bad3db"}],
+  :MedicationRequest
+  [{:resourceType "MedicationRequest",
+    :id "514472b0-f9e1-413a-bf5a-e83c76cb42a2",
+    :intent "proposal",
+    :medication
+    {:Reference
+     {:reference "/Medication/d47518f8-ac80-433c-b1e3-3ee8b2bad3db"}},
+    :subject {:display "Иванов Петр Олегович"}}]},
+ :r4
+ {:Claim
+  ({:id "e0aed276-f41b-4d63-a70d-9509cd298dc2",
+    :originalPrescription
+    {:reference
+     "/MedicationRequest/514472b0-f9e1-413a-bf5a-e83c76cb42a2"},
+    :resourceType "Claim"}),
+  :MedicationRequest
+  ({:id "514472b0-f9e1-413a-bf5a-e83c76cb42a2",
+    :intent "proposal",
+    :medication
+    {:Reference
+     {:reference "/Medication/d47518f8-ac80-433c-b1e3-3ee8b2bad3db"}},
+    :subject {:display "Иванов Петр Олегович"},
+    :resourceType "MedicationRequest"}),
+  :Medication
+  ({:id "d47518f8-ac80-433c-b1e3-3ee8b2bad3db",
+    :resourceType "Medication"})}}

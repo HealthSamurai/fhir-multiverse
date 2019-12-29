@@ -1,5 +1,6 @@
 (ns multiverse.fhir
   (:require [clojure.java.io :as io]
+            [cheshire.core :as json]
             [ironhide.core :as ih]
             [clojure.string :as str]))
 
@@ -43,6 +44,9 @@
    (filter #(str/starts-with? (str (first %)) (str r ".")))
    (map first)
    set))
+
+;; (clojure.pprint/pprint
+;;  (get-resource-fields r4 :MedicationRequest))
 
 (defn fm-diff [s1 s2]
   (->
@@ -130,7 +134,62 @@
    keyword->path
    identity-rule))
 
+(def r3-medication
+  (-> (slurp "results/mapping_example/MedicationR3_package_content.json")
+      (json/parse-string true)
+      ))
+
+(def r4-medication
+  (-> (slurp "results/mapping_example/MedicationR4_package_content.json")
+      (json/parse-string true)
+      ))
+
+(defn read-example [file]
+  (-> (slurp (str "results/testdata/" file))
+      (json/parse-string true)))
+
+
+
 (do
+  (defn get-item-attrs [prefix item]
+    (let [item-type (->>
+                     item
+                     keys
+                     (filter #(str/starts-with? (str %) prefix))
+                     first)]
+      (assoc item :item-type item-type)))
+
+  (defmethod ih/get-global-sight :ihs/add-item-attrs [key args & [ctx]]
+    (let [prefix (get args :prefix ":item")]
+        [(fn [items]
+           (let [res
+                 (mapv (partial get-item-attrs prefix) items)]
+             res)
+           )
+         (fn [items]
+           (mapv #(dissoc % :item-type) items))]))
+
+  (defn get-item-attrs2 [prefix item]
+    (let [item-type (->>
+                     item
+                     :extension
+                     (map keys)
+                     flatten
+                     (filter #(str/starts-with? (str %) prefix))
+                     first)]
+      (assoc item :item-type item-type)))
+
+  (defmethod ih/get-global-sight :ihs/add-item-attrs2 [key args & [ctx]]
+    (let [prefix (get args :prefix ":item")]
+        [(fn [items]
+           (let [res
+                 (mapv (partial get-item-attrs2 prefix) items)]
+             res))
+         (fn [items]
+           (println "attrs2" items)
+           (mapv #(dissoc % :item-type) items)
+           )]))
+
   (def get-base-converter ;; Generated from site
     {:Claim
      #:ih {:sights
@@ -138,13 +197,74 @@
                   {"complete"    "claim"
                    "proposed"    "preauthorization"
                    "exploratory" "predetermination"}}
-           :rules [{:r3 [:use :ihs/translate-use]
+           :rules [{:r3 [:resourceType]
+                    :r4 [:resourceType]}
+                   {:r3 [:use :ihs/translate-use]
                     :r4 [:use]}
                    {:r3 [:organization]
                     :r4 [:provider]}
                    {:r3 [:information]
                     :r4 [:supportingInfo]}
-                   ]}})
+                   {:r3 [:item [:*] :careTeamLinkId]
+                    :r4 [:item [:*] :careTeamSequence]}
+                   {:r3 [:item [:*] :diagnosisLink]
+                    :r4 [:item [:*] :diagnosisSequence]}
+                   {:r3 [:item [:*] :procedureLinkId]
+                    :r4 [:item [:*] :procedureSequence]}
+                   {:r3 [:item [:*] :infromationLinkId]
+                    :r4 [:item [:*] :infromationSequence]}
+                   {:r3 [:item [:*] :service]
+                    :r4 [:item [:*] :productOrService]}
+                   {:r3 [:item [:*] :detail :service]
+                    :r4 [:item [:*] :detail :productOrService]}
+                   {:r3 [:item [:*] :detail :subDetail :service]
+                    :r4 [:item [:*] :detail :subDetail :productOrService]}]}
+     :MedicationRequest
+     #:ih {:sights #:ihs {}
+           :rules  [{:r3 [:resourceType]
+                     :r4 [:resourceType]}
+                    {:r3 [:definition]
+                     :r4 [:intstantiatesCanonical]}
+                    {:r3 [:context]
+                     :r4 [:encounter]}
+                    {:r3 [:agent]
+                     :r4 [:requester]}]}
+     :Medication
+     #:ih {
+           :sights
+           #:ihs{:item<->extension
+                 #:ih{:direction [:r3 :r4]
+                      :rules     []}}
+           :rules [{:r3 [:resourceType]
+                    :r4 [:resourceType]}
+                   {:r3 [:ingredient [:*] :amount]
+                    :r4 [:ingredient [:*] :strength]}
+                   {:r3 [:package :content ;;:ihs/add-item-attrs
+                         [:* {:itemCodeableConcept {}}]
+                         :itemCodeableConcept]
+                    :r4 [:extension ;; {:ih/sight :ihs/add-item-attrs2 :prefix ":value"}
+                         [:* {:url "http://hl7.org/fhir/3.0/StructureDefinition/extension-Medication.package.content" :extension [{:valueCodeableConcept {} :url "item"}]}]
+                         :extension
+                         [0 {:url "item"}] :valueCodeableConcept]}
+                   {:r3 [:package :content ;;:ihs/add-item-attrs
+                         [:* {:itemReference {}}]
+                         :itemReference]
+                    :r4 [:extension
+                         ;; {:ih/sight :ihs/add-item-attrs2 :prefix ":value"}
+                         [:* {:url       "http://hl7.org/fhir/3.0/StructureDefinition/extension-Medication.package.content"
+                              :extension [{:url "item" :valueReference {}}]
+                              }]
+                         :extension
+                         [0 {:url "item"}] :valueReference]}
+
+                   {:r3 [:package :content
+                         [:*]
+                         :amount]
+                    :r4 [:extension
+                         [:* {:url "http://hl7.org/fhir/3.0/StructureDefinition/extension-Medication.package.content"}]
+                         :extension [0 {:url "amount"}] :valueQuantity]}
+                   ]}
+     })
 
   (defn get-copy-rules-by-resource [resource]
     (let [shared-fields (get-in diff [:resources :fields resource :shared :fields])
@@ -161,8 +281,15 @@
            :sights    (:ih/sights base-converter)
            :rules     (concat
                        (get-copy-rules-by-resource resource)
-                       (:ih/rules base-converter))})
-    ))
+                       (:ih/rules base-converter))}))
+  ;; (->
+  ;;  (get-converter-by-resource :Medication)
+  ;;  (assoc-in [:ih/data :r4] r4-medication)
+  ;;  (assoc-in [:ih/direction] [:r4 :r3])
+  ;;  ih/execute
+  ;;  :ih/data
+  ;;  clojure.pprint/pprint)
+  )
 
 ;; (get-converter-by-resource :Claim)
 ;; (->
@@ -199,6 +326,55 @@
          :rules     (concat (generate-rules resources-to-convert)
                             [])}))
 
+
+(do
+  (def test-db
+    {:r3
+     {:Claim             [(read-example "simple_claim_r3.json")]
+      :Medication        [(read-example "simple_medication_r3.json")]
+      :MedicationRequest [(read-example "simple_medicationrequest_r3.json")]}
+
+     :r4
+     {:Claim             [(read-example "simple_claim_r4.json")]
+      :Medication        [(read-example "simple_medication_r4.json")]
+      :MedicationRequest [(read-example "simple_medicationrequest_r4.json")]}}
+    )
+    (spit "results/r4->r3.edn"
+          (with-out-str
+            (-> {:ih/data (dissoc test-db :r3)}
+                (merge super-converter)
+                (assoc :ih/direction [:r4 :r3])
+                ih/execute
+                :ih/data
+                clojure.pprint/pprint))))
+
+(do
+  (def test-db
+    {:r3
+     {:Claim             [(read-example "simple_claim_r3.json")]
+      :Medication        [(read-example "simple_medication_r3.json")]
+      :MedicationRequest [(read-example "simple_medicationrequest_r3.json")]}
+
+     :r4
+     {:Claim             [(read-example "simple_claim_r4.json")]
+      :Medication        [(read-example "simple_medication_r4.json")]
+      :MedicationRequest [(read-example "simple_medicationrequest_r4.json")]}}
+    )
+  (spit "results/r3->r4.edn"
+        (with-out-str
+          (-> {:ih/data (dissoc test-db :r4)}
+              (merge super-converter)
+              ih/execute
+              :ih/data
+              clojure.pprint/pprint))))
+
+(->
+ #:ih {:direction [:r4 :r3]
+       :rules [{:r3 [:insurance [:*] :id]
+                :r4 [:insurance [:*] :id]}]
+       :data {:r4 {:insurance [{:focal true}]}}}
+ ih/execute
+ :ih/data)
 
 (spit
  "results/diff.edn"
