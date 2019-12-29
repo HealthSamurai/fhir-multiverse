@@ -1,0 +1,20 @@
+{:Claims
+ {:rename
+  {:src.organization-where-src.provider.exists().not() -> tgt.provider
+   :src.informayion -> tgt.supportInfo
+   :src.item.careTimeLinkId -> tgt.item.careTimeSequence
+   :src.item.diagnosisLink -> tgt.item.diagnosisSequence
+   :src.item.procedureLinkId -> tgt.item.procedureSequence
+   :src.item.informationLinkId -> tgt.item.informationSequence
+   :src.item.service -> tgt.item.productOrService
+   :src.item.detail.service -> tgt.item.detail.productOrService
+   :src.item.detail.subDetail.service -> tgt.item.detail.subDetail.productOrService}}
+ :Medication
+ {:rename
+  {:src.amount -> tgt.strength}}
+ :MedicationRequest
+ {:rename
+  {:src.definition -> tgt.intstantiatesCanonical
+   :src.context -> tgt.encounter
+   :src.agent -> tgt.requester}}}
+

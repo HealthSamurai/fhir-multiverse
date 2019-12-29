@@ -80,7 +80,7 @@
   (db.core/db-spec-from-env))
 
 (defn -main [& args]
-  (start {:db (db-from-env) 
+  (start {:db (db-from-env)
           :web {}}))
 
 (comment
